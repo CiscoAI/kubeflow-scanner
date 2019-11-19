@@ -1,0 +1,14 @@
+gcr.io/cpsg-ai-kubeflow/tensorflow-1.14.0-notebook-cpu@sha256:663a3d00d98fc4d12f35b8dd958eb8eb07f43a9b4590a41c9a996afea9d76980
+gcr.io/cpsg-ai-kubeflow/tensorflow-1.14.0-notebook-cpu:v-base-99c03aa-1176080294432739328
+gcr.io/cpsg-ai-kubeflow/tensorflow-1.14.0-notebook-cpu@sha256:6dd8d7f37bc5d028d38cfa0e15e2a0a81acd5a2162df32ebbb9fd9e4b845b104
+gcr.io/cpsg-ai-kubeflow/tensorflow-1.14.0-notebook-cpu:v-base-b813c9a-1184585142199390209
+gcr.io/cpsg-ai-kubeflow/tensorflow-1.14.0-notebook-cpu@sha256:fe174faf7c477bc3dae796b067d98ac3f0d31e8075007a1146f86d13f2c98e13
+gcr.io/cpsg-ai-kubeflow/tensorflow-1.14.0-notebook-cpu:v-base-ef41372-1177829795472347138
+gcr.io/cpsg-ai-kubeflow/tensorflow-1.14.0-notebook-cpu:v0.7.0
+gcr.io/cpsg-ai-kubeflow/tensorflow-1.14.0-notebook-gpu@sha256:0d4f11de65e23deac6c2e955b37aa5d549085f8ea1a03d696a3fff9f27d4df3f
+gcr.io/cpsg-ai-kubeflow/tensorflow-1.14.0-notebook-gpu:v-base-b813c9a-1184585142199390209
+gcr.io/cpsg-ai-kubeflow/tensorflow-1.14.0-notebook-gpu@sha256:7443e0869b774177c7a9e45dceb741b01beea7c114155b3decff39b2a1ee1877
+gcr.io/cpsg-ai-kubeflow/tensorflow-1.14.0-notebook-gpu:v-base-99c03aa-1176080294432739328
+gcr.io/cpsg-ai-kubeflow/tensorflow-1.14.0-notebook-gpu@sha256:895aa500ff09c9080e0755044e4fd9a3bd3dc3ae403415e220ebcc1dab09b6ef
+gcr.io/cpsg-ai-kubeflow/tensorflow-1.14.0-notebook-gpu:v-base-ef41372-1177829795472347138
+gcr.io/cpsg-ai-kubeflow/tensorflow-1.14.0-notebook-gpu:v0.7.0
