@@ -1,6 +1,6 @@
 ### CVE for Resource ###
 image: https://gcr.io/cpsg-ai-kubeflow/tensorflow-1.14.0-notebook-cpu@sha256:663a3d00d98fc4d12f35b8dd958eb8eb07f43a9b4590a41c9a996afea9d76980
-### Listing CVEs and corresponding severity
+### Listing CVEs and corresponding severity ###
   CVEName: projects/goog-vulnz/notes/CVE-2018-20843
   CvssScore: 7.8
   CVEName: projects/goog-vulnz/notes/CVE-2017-13716
@@ -47,7 +47,7 @@ image: https://gcr.io/cpsg-ai-kubeflow/tensorflow-1.14.0-notebook-cpu@sha256:663
   CvssScore: 7.5
 ### CVE for Resource ###
 image: https://gcr.io/cpsg-ai-kubeflow/tensorflow-1.14.0-notebook-cpu@sha256:6dd8d7f37bc5d028d38cfa0e15e2a0a81acd5a2162df32ebbb9fd9e4b845b104
-### Listing CVEs and corresponding severity
+### Listing CVEs and corresponding severity ###
   CVEName: projects/goog-vulnz/notes/CVE-2019-9511
   CvssScore: 7.8
   CVEName: projects/goog-vulnz/notes/CVE-2018-11236
@@ -90,7 +90,7 @@ image: https://gcr.io/cpsg-ai-kubeflow/tensorflow-1.14.0-notebook-cpu@sha256:6dd
   CvssScore: 7.1
 ### CVE for Resource ###
 image: https://gcr.io/cpsg-ai-kubeflow/tensorflow-1.14.0-notebook-cpu@sha256:fe174faf7c477bc3dae796b067d98ac3f0d31e8075007a1146f86d13f2c98e13
-### Listing CVEs and corresponding severity
+### Listing CVEs and corresponding severity ###
   CVEName: projects/goog-vulnz/notes/CVE-2018-7738
   CvssScore: 7.2
   CVEName: projects/goog-vulnz/notes/CVE-2019-2201
@@ -137,7 +137,7 @@ image: https://gcr.io/cpsg-ai-kubeflow/tensorflow-1.14.0-notebook-cpu@sha256:fe1
   CvssScore: 7.8
 ### CVE for Resource ###
 image: https://gcr.io/cpsg-ai-kubeflow/tensorflow-1.14.0-notebook-gpu@sha256:0d4f11de65e23deac6c2e955b37aa5d549085f8ea1a03d696a3fff9f27d4df3f
-### Listing CVEs and corresponding severity
+### Listing CVEs and corresponding severity ###
   CVEName: projects/goog-vulnz/notes/CVE-2017-13716
   CvssScore: 7.1
   CVEName: projects/goog-vulnz/notes/CVE-2018-12699
@@ -152,8 +152,14 @@ image: https://gcr.io/cpsg-ai-kubeflow/tensorflow-1.14.0-notebook-gpu@sha256:0d4
   CvssScore: 9.3
   CVEName: projects/goog-vulnz/notes/CVE-2019-18224
   CvssScore: 7.5
+  CVEName: projects/goog-vulnz/notes/CVE-2019-8457
+  CvssScore: 7.5
   CVEName: projects/goog-vulnz/notes/CVE-2017-13133
   CvssScore: 7.1
+  CVEName: projects/goog-vulnz/notes/CVE-2016-1585
+  CvssScore: 7.5
+  CVEName: projects/goog-vulnz/notes/CVE-2019-9513
+  CvssScore: 7.8
   CVEName: projects/goog-vulnz/notes/CVE-2018-20969
   CvssScore: 9.3
   CVEName: projects/goog-vulnz/notes/CVE-2016-9085
@@ -162,13 +168,21 @@ image: https://gcr.io/cpsg-ai-kubeflow/tensorflow-1.14.0-notebook-gpu@sha256:0d4
   CvssScore: 7.5
   CVEName: projects/goog-vulnz/notes/CVE-2017-11164
   CvssScore: 7.8
+  CVEName: projects/goog-vulnz/notes/CVE-2018-20843
+  CvssScore: 7.8
+  CVEName: projects/goog-vulnz/notes/CVE-2019-9169
+  CvssScore: 7.5
+  CVEName: projects/goog-vulnz/notes/CVE-2018-1000654
+  CvssScore: 7.1
   CVEName: projects/goog-vulnz/notes/CVE-2019-9511
   CvssScore: 7.8
   CVEName: projects/goog-vulnz/notes/CVE-2018-7738
   CvssScore: 7.2
+  CVEName: projects/goog-vulnz/notes/CVE-2018-11236
+  CvssScore: 7.5
 ### CVE for Resource ###
 image: https://gcr.io/cpsg-ai-kubeflow/tensorflow-1.14.0-notebook-gpu@sha256:7443e0869b774177c7a9e45dceb741b01beea7c114155b3decff39b2a1ee1877
-### Listing CVEs and corresponding severity
+### Listing CVEs and corresponding severity ###
   CVEName: projects/goog-vulnz/notes/CVE-2018-11236
   CvssScore: 7.5
   CVEName: projects/goog-vulnz/notes/CVE-2017-13716
@@ -219,7 +233,7 @@ image: https://gcr.io/cpsg-ai-kubeflow/tensorflow-1.14.0-notebook-gpu@sha256:744
   CvssScore: 7.1
 ### CVE for Resource ###
 image: https://gcr.io/cpsg-ai-kubeflow/tensorflow-1.14.0-notebook-gpu@sha256:895aa500ff09c9080e0755044e4fd9a3bd3dc3ae403415e220ebcc1dab09b6ef
-### Listing CVEs and corresponding severity
+### Listing CVEs and corresponding severity ###
   CVEName: projects/goog-vulnz/notes/CVE-2019-17266
   CvssScore: 7.5
   CVEName: projects/goog-vulnz/notes/CVE-2018-20843
