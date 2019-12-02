@@ -16,12 +16,12 @@ export GOOGLE_APPLICATION_CREDENTIALS=<path-to-service-account-key>
 
 ## Container Analysis Backends
 
-|Backend|Platform|Known to Work?|Status
-|---	|---	|---	|---	|---
-|[GCP API](https://cloud.google.com/container-registry/docs/reference/rest/)|CLI   	|Yes :heavy_check_mark:| :heavy_check_mark:|   	
-|[GCP API](https://cloud.google.com/container-registry/docs/reference/rest/)|Kubernetes   	|Unsure :question:| None   	|
-|[Clair](https://github.com/quay/clair)|Kubernetes   	|Unsure :question:| :hammer_and_wrench:   	|
-|[Anchore Engine](https://github.com/quay/clair)|Kubernetes   	|Unsure :question:| None   	|
+**Backend**|**Platform**|**Known to Work?**|**Status**
+:-----:|:-----:|:-----:|:-----:
+[GCP API](https://cloud.google.com/container-registry/docs/reference/rest/)|CLI|Yes :heavy\_check\_mark:|:heavy\_check\_mark:
+[GCP API](https://cloud.google.com/container-registry/docs/reference/rest/)|Kubernetes|Unsure :question:| None
+[Clair](https://github.com/quay/clair)|Kubernetes|Unsure :question:|:hammer\_and\_wrench:
+[Anchore Engine](https://github.com/quay/clair)|Kubernetes|Unsure :question:| None
 
 ## Caveats
 
