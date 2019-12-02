@@ -56,8 +56,9 @@ func Run() error {
 func main() {
 	log.SetOutput(os.Stdout)
 	log.SetFormatter(&log.TextFormatter{
-		FullTimestamp: true,
-		ForceColors:   true,
+		FullTimestamp:   true,
+		TimestampFormat: "15:04:05",
+		ForceColors:     true,
 	})
 	if err := Run(); err != nil {
 		os.Exit(1)

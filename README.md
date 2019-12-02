@@ -9,8 +9,25 @@ Long term, this is a tool that can be run as part of your CI/CD pipeline to blac
 ## Quick Start
 
 ```bash
-export IMAGE_FILE_NAME=images.txt
-export GCP_PROJECT=<YOUR_GCP_PROJECT>
+export GOOGLE_APPLICATION_CREDENTIALS=<path-to-service-account-key>
 ```
 
 `make all`
+
+## Container Analysis Backends
+
+|Backend|Platform|Known to Work?|Status
+|---	|---	|---	|---	|---
+|[GCP API](https://cloud.google.com/container-registry/docs/reference/rest/)|CLI   	|Yes :heavy_check_mark:| :heavy_check_mark:|   	
+|[GCP API](https://cloud.google.com/container-registry/docs/reference/rest/)|Kubernetes   	|Unsure :question:| None   	|
+|[Clair](https://github.com/quay/clair)|Kubernetes   	|Unsure :question:| :hammer_and_wrench:   	|
+|[Anchore Engine](https://github.com/quay/clair)|Kubernetes   	|Unsure :question:| None   	|
+
+## Caveats
+
+- Even if a repo is public, one does not simply list vulnerabilities for the repo (unless you have write access).
+
+### TODO
+
+- Add option to write results file to object store (GCS, S3...)
+- CoreOS Clair as a backend
