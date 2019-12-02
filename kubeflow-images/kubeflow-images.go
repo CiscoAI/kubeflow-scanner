@@ -53,12 +53,18 @@ func findVulnerabilityOccurrencesForImage(resourceURL, projectID string) ([]*gra
 	it := client.GetGrafeasClient().ListOccurrences(ctx, req)
 	for {
 		occ, err := it.Next()
+		if occ == nil {
+			log.Errorf("nil error encountered")
+		}
 		if err == iterator.Done {
 			break
 		} else if err != nil {
 			return nil, fmt.Errorf("occurrence iteration error: %v", err)
 		}
-		if occ.GetVulnerability().GetSeverity() == grafeaspb.Severity_HIGH || occ.GetVulnerability().GetSeverity() == grafeaspb.Severity_HIGH || occ.GetVulnerability().GetCvssScore() > 7.0 {
+		for _, pkg := range occ.GetVulnerability().GetPackageIssue() {
+			log.Infof("affected package: %v", pkg.AffectedPackage)
+		}
+		if occ.GetVulnerability().GetSeverity() == grafeaspb.Severity_HIGH || occ.GetVulnerability().GetSeverity() == grafeaspb.Severity_CRITICAL {
 			occurenceList = append(occurenceList, occ)
 		}
 	}

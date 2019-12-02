@@ -164,6 +164,8 @@ image: https://gcr.io/cpsg-ai-kubeflow/tensorflow-1.14.0-notebook-gpu@sha256:0d4
   CvssScore: 9.3
   CVEName: projects/goog-vulnz/notes/CVE-2016-9085
   CvssScore: 7.5
+  CVEName: projects/goog-vulnz/notes/CVE-2019-2201
+  CvssScore: 9.3
   CVEName: projects/goog-vulnz/notes/CVE-2019-13132
   CvssScore: 7.5
   CVEName: projects/goog-vulnz/notes/CVE-2017-11164
