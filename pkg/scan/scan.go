@@ -18,7 +18,7 @@ type ResourceCVEList struct {
 	SeverityList []float32
 }
 
-func findVulnerabilityOccurrencesForImage(resourceURL, projectID string) ([]*grafeaspb.Occurrence, error) {
+func FindVulnerabilityOccurrencesForImage(resourceURL, projectID string) ([]*grafeaspb.Occurrence, error) {
 	ctx := context.Background()
 	client, err := containeranalysis.NewClient(ctx)
 	if err != nil {
@@ -37,14 +37,17 @@ func findVulnerabilityOccurrencesForImage(resourceURL, projectID string) ([]*gra
 	for {
 		occ, err := it.Next()
 		if occ == nil {
-			return nil, fmt.Errorf("unable to fetch occurence, occurence is nil")
+			log.Errorf("nil error encountered")
 		}
 		if err == iterator.Done {
 			break
 		} else if err != nil {
 			return nil, fmt.Errorf("occurrence iteration error: %v", err)
 		}
-		if occ.GetVulnerability().GetSeverity() == grafeaspb.Severity_HIGH || occ.GetVulnerability().GetSeverity() == grafeaspb.Severity_CRITICAL || occ.GetVulnerability().GetCvssScore() > 7.5 {
+		for _, pkg := range occ.GetVulnerability().GetPackageIssue() {
+			log.Infof("affected package: %v", pkg.AffectedPackage)
+		}
+		if occ.GetVulnerability().GetSeverity() == grafeaspb.Severity_HIGH || occ.GetVulnerability().GetSeverity() == grafeaspb.Severity_CRITICAL {
 			occurenceList = append(occurenceList, occ)
 		}
 	}
@@ -57,7 +60,7 @@ func listVulnerabilities(imageList []string, gcpProject string) ([]*ResourceCVEL
 
 	// fetch vulnerabilities for GCR repo images using Container Analysis API
 	for _, image := range imageList {
-		occurenceList, err := findVulnerabilityOccurrencesForImage(image, gcpProject)
+		occurenceList, err := FindVulnerabilityOccurrencesForImage(image, gcpProject)
 		if err != nil {
 			return nil, err
 		}

@@ -3,6 +3,7 @@ package main
 import (
 	"os"
 
+	image "github.com/CiscoAI/kubeflow-scanner/cmd/scanr/image"
 	repo "github.com/CiscoAI/kubeflow-scanner/cmd/scanr/repo"
 	version "github.com/CiscoAI/kubeflow-scanner/cmd/scanr/version"
 	log "github.com/sirupsen/logrus"
@@ -32,6 +33,7 @@ func NewCommand() *cobra.Command {
 		Version:      version.Version,
 	}
 	cmd.AddCommand(repo.NewCommand())
+	cmd.AddCommand(image.NewCommand())
 	cmd.AddCommand(version.NewCommand())
 	return cmd
 }

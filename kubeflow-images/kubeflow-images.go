@@ -35,7 +35,7 @@ type ResourceCVEList struct {
 	SeverityList []float32
 }
 
-func findVulnerabilityOccurrencesForImage(resourceURL, projectID string) ([]*grafeaspb.Occurrence, error) {
+func FindVulnerabilityOccurrencesForImage(resourceURL, projectID string) ([]*grafeaspb.Occurrence, error) {
 	ctx := context.Background()
 	client, err := containeranalysis.NewClient(ctx)
 	if err != nil {
@@ -103,7 +103,7 @@ func main() {
 	var cveResources []*ResourceCVEList
 
 	for _, resourceURL := range resourceURLs {
-		occurenceList, err := findVulnerabilityOccurrencesForImage(resourceURL, gcpProjectName)
+		occurenceList, err := FindVulnerabilityOccurrencesForImage(resourceURL, gcpProjectName)
 		if err != nil {
 			fmt.Printf("Error fetching vulnerabilities: %v\n", err)
 			return

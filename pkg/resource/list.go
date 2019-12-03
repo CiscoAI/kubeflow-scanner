@@ -62,10 +62,10 @@ func appendImages(repo name.Repository, tags *google.Tags, err error) error {
 	}
 
 	for digest, manifest := range tags.Manifests {
-		imageList = append(imageList, fmt.Sprintf("%s@%s", repo, digest))
+		imageList = append(imageList, fmt.Sprintf("https://%s@%s", repo, digest))
 
 		for _, tag := range manifest.Tags {
-			imageList = append(imageList, fmt.Sprintf("%s:%s", repo, tag))
+			imageList = append(imageList, fmt.Sprintf("https://%s:%s", repo, tag))
 		}
 	}
 	return nil

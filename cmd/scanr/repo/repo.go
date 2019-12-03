@@ -13,6 +13,7 @@ type flagpole struct {
 	Name           string
 	GcpProjectName string
 	OutputFileName string
+	Filter         string
 }
 
 // NewCommand returns a new cobra.Command for repo
@@ -28,6 +29,7 @@ func NewCommand() *cobra.Command {
 		},
 	}
 	cmd.Flags().StringVar(&flags.Name, "name", "", "GCR repo name")
+	cmd.Flags().StringVar(&flags.Filter, "filter", "", "Filter regex string")
 	cmd.Flags().StringVar(&flags.GcpProjectName, "project", "", "GCP Project name")
 	cmd.Flags().StringVar(&flags.OutputFileName, "file", "cvelist.yaml", "Output YAML filename")
 	return cmd
@@ -39,7 +41,7 @@ func repo(cmd *cobra.Command, args []string, flags *flagpole) error {
 	if err != nil {
 		return fmt.Errorf("error fetching image list: %v", err)
 	}
-	regexID := regexp.MustCompile(`tensorflow-1\.14\.0-notebook-gpu`)
+	regexID := regexp.MustCompile(flags.Filter)
 	var newImageList []string
 	for _, image := range imageList {
 		if regexID.MatchString(image) {
