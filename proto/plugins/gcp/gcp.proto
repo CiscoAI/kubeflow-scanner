@@ -1,0 +1,15 @@
+syntax = "proto3";
+package gcp;
+
+message GetImageScanRequest {
+    string image = 1;
+    string project = 2;
+}
+
+message GetImageScanResponse {
+    bytes report = 1;
+}
+
+service Gcp {
+    rpc ScanImage(GetImageScanRequest) returns (GetImageScanResponse);
+}

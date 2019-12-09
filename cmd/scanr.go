@@ -15,6 +15,7 @@ const defaultLevel = log.WarnLevel
 // Flags for the kind command
 type Flags struct {
 	LogLevel string
+	Backend  string
 }
 
 // NewCommand creates the root cobra command

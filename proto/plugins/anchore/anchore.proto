@@ -1,0 +1,14 @@
+syntax = "proto3";
+package anchore;
+
+message GetImageScanRequest {
+    string image = 1;
+}
+
+message GetImageScanResponse {
+    bytes report = 1;
+}
+
+service Anchore {
+    rpc ScanImage(GetImageScanRequest) returns (GetImageScanResponse);
+}
