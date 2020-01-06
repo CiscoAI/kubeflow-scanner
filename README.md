@@ -25,6 +25,8 @@ export GOOGLE_APPLICATION_CREDENTIALS=<path-to-service-account-key>
 
 ## Caveats
 
+### GCP Container Analysis
+
 - Even if a repo is public, one does not simply list vulnerabilities for the repo (unless you have write access).
 
 ### TODO
