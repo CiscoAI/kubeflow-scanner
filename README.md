@@ -2,7 +2,7 @@
 
 ## What is Kubeflow Scanner?
 
-Kubeflow Scanner is a tool to walk through images in the kubeflow-images-public repo and list all CRITICAL and HIGH vulnerabilities.
+Kubeflow Scanner is a tool to walk through images in a Kubeflow deployment and list CRITICAL and HIGH vulnerabilities.
 
 Long term, this is a tool that can be run as part of your CI/CD pipeline to blacklist and whitelist vulnerabilities for your Kubeflow deployment.
 
@@ -29,7 +29,7 @@ export GOOGLE_APPLICATION_CREDENTIALS=<path-to-service-account-key>
 
 - Even if a repo is public, one does not simply list vulnerabilities for the repo (unless you have write access).
 
-### TODO
+## Roadmap
 
-- Add option to write results file to object store (GCS, S3...)
-- CoreOS Clair as a backend
+- Static site for listing images and their vulnerabilities
+- Anchore, Clair as vulnerability scanning backends
