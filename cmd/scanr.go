@@ -7,6 +7,7 @@ import (
 	repo "github.com/CiscoAI/kubeflow-scanner/cmd/scanr/repo"
 	server "github.com/CiscoAI/kubeflow-scanner/cmd/scanr/server"
 	version "github.com/CiscoAI/kubeflow-scanner/cmd/scanr/version"
+	vulns "github.com/CiscoAI/kubeflow-scanner/cmd/scanr/vulns"
 	log "github.com/sirupsen/logrus"
 	"github.com/spf13/cobra"
 )
@@ -23,7 +24,7 @@ type Flags struct {
 
 // NewCommand creates the root cobra command
 func NewCommand() *cobra.Command {
-	flags := &Flags{LogLevel: "info"}
+	flags := &Flags{}
 	cmd := &cobra.Command{
 		Args:  cobra.NoArgs,
 		Use:   "scanr",
@@ -35,11 +36,13 @@ func NewCommand() *cobra.Command {
 		SilenceUsage: true,
 	}
 	// flags for the global command, scanr
-	cmd.Flags().StringVar(&flags.KfVersion, "kfversion", "v0.7", "Give the required version of Kubeflow.")
-	cmd.Flags().StringVar(&flags.Registry, "registry", "gcr.io/kubeflow-images-public", "The image registry from where we pick the Kubeflow images.")
-	cmd.Flags().StringVar(&flags.Scanner, "scanner", "anchore", "Choice of vulnerability scanner.")
+	cmd.PersistentFlags().StringVar(&flags.LogLevel, "loglevel", "info", "Set global LogLevel for scanr.")
+	cmd.PersistentFlags().StringVar(&flags.KfVersion, "kfversion", "v0.7", "Give the required version of Kubeflow.")
+	cmd.PersistentFlags().StringVar(&flags.Registry, "registry", "gcr.io/kubeflow-images-public", "The image registry from where we pick the Kubeflow images.")
+	cmd.PersistentFlags().StringVar(&flags.Scanner, "scanner", "anchore", "Choice of vulnerability scanner.")
 	// sub-commands
 	cmd.AddCommand(repo.NewCommand())
+	cmd.AddCommand(vulns.NewCommand())
 	cmd.AddCommand(image.NewCommand())
 	cmd.AddCommand(server.NewCommand())
 	cmd.AddCommand(version.NewCommand())
@@ -47,6 +50,7 @@ func NewCommand() *cobra.Command {
 }
 
 func runE(flags *Flags, cmd *cobra.Command, args []string) error {
+	// handle logLevel logic
 	level := defaultLevel
 	parsed, err := log.ParseLevel(flags.LogLevel)
 	if err != nil {
@@ -55,6 +59,12 @@ func runE(flags *Flags, cmd *cobra.Command, args []string) error {
 		level = parsed
 	}
 	log.SetLevel(level)
+
+	// handle registry logic
+	// isGCR := false
+	// log.Infof("is Repo GCR: %v", isGCR)
+
+	// handle scanner logic
 	return nil
 }
 
