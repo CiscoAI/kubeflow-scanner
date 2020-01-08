@@ -1,15 +1,15 @@
-# Define a GitHub Action periodic workflow to determine list all 
-# vulnerabilities in a version of Kubeflow
-name: Scan for Vulnerabilties in Kubeflow
-on:
-  schedule:
-    - cron: '0 17 * * 3' # 9am PT every Wednesday => 5pm every Wednesday UTC
-jobs:
-  build:
-    runs-on: ubuntu-latest
-    steps:
-    - uses: actions/checkout@v1
-    - uses: anchore/scan-action@v1.0.1
-      with:
-        image-reference: "localbuild/testimage:latest"
-        fail-build: true
+# # Define a GitHub Action periodic workflow to determine list all 
+# # vulnerabilities in a version of Kubeflow
+# name: Scan for Vulnerabilties in Kubeflow
+# on:
+#   schedule:
+#     - cron: '0 17 * * 3' # 9am PT every Wednesday => 5pm every Wednesday UTC
+# jobs:
+#   build:
+#     runs-on: ubuntu-latest
+#     steps:
+#     - uses: actions/checkout@v1
+#     - uses: anchore/scan-action@v1.0.1
+#       with:
+#         image-reference: "localbuild/testimage:latest"
+#         fail-build: true
