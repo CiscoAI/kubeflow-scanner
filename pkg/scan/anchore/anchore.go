@@ -4,11 +4,15 @@ import (
 	"bytes"
 	"context"
 	"encoding/json"
+	"encoding/xml"
+	"errors"
 	"fmt"
 	"io/ioutil"
 	"net/http"
 	"os"
+	"regexp"
 
+	anchore "github.com/anchore/kubernetes-admission-controller/pkg/anchore/client"
 	log "github.com/sirupsen/logrus"
 )
 
@@ -21,6 +25,9 @@ import (
 // Step 4. Fetch all Critical and High Vulnerabilities - GetVuln() function
 
 // Reference code: https://github.com/banzaicloud/anchore-image-validator/blob/master/pkg/anchore/client.go
+
+var xmlCheck = regexp.MustCompile(`(?i:(?:application|text)/xml)`)
+var jsonCheck = regexp.MustCompile(`(?i:(?:application|text)/(?:vnd\.[^;]+\+)?json)`)
 
 // Client holds the information needed to authenticate to a service endpoint
 type Client struct {
@@ -84,11 +91,28 @@ func anchoreRequest(ctx context.Context, path string, method string, bodyParams 
 	if resp.StatusCode != 200 {
 		return nil, fmt.Errorf("anchore request returned a non-zero error: %s", bodyText)
 	}
-	log.WithFields(log.Fields{
-		"Response": fmt.Sprintf("%s", bodyText),
-	}).Info("Anchore Response Body")
 
 	return bodyText, nil
+}
+
+func anchoreResponseDecode(v interface{}, b []byte, contentType string) (err error) {
+	if s, ok := v.(*string); ok {
+		*s = string(b)
+		return nil
+	}
+	if xmlCheck.MatchString(contentType) {
+		if err = xml.Unmarshal(b, v); err != nil {
+			return err
+		}
+		return nil
+	}
+	if jsonCheck.MatchString(contentType) {
+		if err = json.Unmarshal(b, v); err != nil {
+			return err
+		}
+		return nil
+	}
+	return errors.New("undefined response type")
 }
 
 func getImageDigest(ctx context.Context, imageName string) (string, error) {
@@ -110,7 +134,7 @@ func getImageDigest(ctx context.Context, imageName string) (string, error) {
 // Step 1 in the Anchore Scanning Workflow
 func ScanImage(ctx context.Context, imageName string) error {
 	params := map[string]string{"tag": imageName}
-	_, err := anchoreRequest(ctx, "/images?force=true&autosubscribe=false", "POST", params)
+	addImageResponseBody, err := anchoreRequest(ctx, "/images?force=true&autosubscribe=false", "POST", params)
 	if err != nil {
 		return err
 	}
@@ -119,6 +143,12 @@ func ScanImage(ctx context.Context, imageName string) error {
 		"Image": imageName,
 	}).Info("Added image to be scanned")
 
+	var anchoreImages []anchore.AnchoreImage
+	err = anchoreResponseDecode(&anchoreImages, addImageResponseBody, "application/json")
+	if err != nil {
+		return err
+	}
+	log.Infof("Anchore Image Add Analysis Status: %s", anchoreImages[0].AnalysisStatus)
 	return nil
 }
 
@@ -132,14 +162,17 @@ func GetImage(ctx context.Context, imageName string) error {
 	}
 	log.Infof("Image Digest: %s", digest)
 	params := map[string]string{"digest": digest, "tag": imageName}
-	_, err = anchoreRequest(ctx, "/images", "GET", params)
+	getImageResponseBody, err := anchoreRequest(ctx, "/images", "GET", params)
 	if err != nil {
 		return err
 	}
 
-	log.WithFields(log.Fields{
-		"Image": imageName,
-	}).Info("Image Scan Response")
+	var anchoreImages []anchore.AnchoreImage
+	err = anchoreResponseDecode(&anchoreImages, getImageResponseBody, "application/json")
+	if err != nil {
+		return err
+	}
+	log.Infof("Anchore Image Add Analysis Status: %s", anchoreImages[0].AnalysisStatus)
 
 	return nil
 }
@@ -154,9 +187,22 @@ func GetVuln(ctx context.Context, imageName string) error {
 	}
 	log.Infof("Image Digest: %s", digest)
 	requestPath := "/images/" + digest + "/vuln/all"
-	_, err = anchoreRequest(ctx, requestPath, "GET", nil)
+	getVulnResponse, err := anchoreRequest(ctx, requestPath, "GET", nil)
 	if err != nil {
 		return err
+	}
+
+	var vulnResponse anchore.VulnerabilityResponse
+	err = anchoreResponseDecode(&vulnResponse, getVulnResponse, "application/json")
+	if err != nil {
+		return err
+	}
+	log.Infof("Total Vulnerabilities: %v", len(vulnResponse.Vulnerabilities))
+	for _, vuln := range vulnResponse.Vulnerabilities {
+		if vuln.Severity == "High" || vuln.Severity == "Critical" {
+			log.Infof("Vulnerability Identifier: %s", vuln.Vuln)
+			log.Infof("Affected Package Name: %s", vuln.PackageName)
+		}
 	}
 	return nil
 }
