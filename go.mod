@@ -5,6 +5,7 @@ go 1.13
 require (
 	cloud.google.com/go v0.48.0
 	github.com/NYTimes/openapi2proto v0.2.2 // indirect
+	github.com/anchore/kubernetes-admission-controller v0.2.2
 	github.com/docker/cli v0.0.0-20191220145525-ba63a92655c0 // indirect
 	github.com/dolmen-go/jsonptr v0.0.0-20190605225012-a9a7ae01cd7d // indirect
 	github.com/google/go-cmp v0.3.1 // indirect
