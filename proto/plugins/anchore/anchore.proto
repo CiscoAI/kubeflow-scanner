@@ -1,14 +1,50 @@
 syntax = "proto3";
 package anchore;
 
-message GetImageScanRequest {
+import "google/api/annotations.proto";
+import "google/protobuf/empty.proto";
+
+message ScanImageRequest {
     string image = 1;
 }
 
-message GetImageScanResponse {
+message ScanImageResponse {
     bytes report = 1;
 }
 
+message GetImageRequest {
+    string image = 1;
+}
+
+message GetImageResponse {
+    bytes response = 1;
+}
+
+message GetVulnerabilitiesRequest {
+    string image = 1;
+}
+
+message GetVulnerabilitiesResponse {
+    string response = 1;
+}
+
 service Anchore {
-    rpc ScanImage(GetImageScanRequest) returns (GetImageScanResponse);
+    rpc ScanImage(ScanImageRequest) returns (ScanImageResponse) {
+        option (google.api.http) = {
+            post: "/images?force=true&autosubscribe=false"
+        };
+    }
+
+    rpc GetImage(GetImageRequest) returns (GetImageResponse) {
+        option (google.api.http) = {
+            get: "/images"
+        };
+    }
+
+    // TODO(swiftdiaries):: figure out what the right API call is and implement for Anchore
+    rpc GetVulnerabilities(GetVulnerabilitiesRequest) returns (GetVulnerabilitiesResponse) {
+        option (google.api.http) = {
+            get: "/images/{imagesha}/vuln/all"
+        };
+    }
 }

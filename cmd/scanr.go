@@ -7,7 +7,6 @@ import (
 	repo "github.com/CiscoAI/kubeflow-scanner/cmd/scanr/repo"
 	server "github.com/CiscoAI/kubeflow-scanner/cmd/scanr/server"
 	version "github.com/CiscoAI/kubeflow-scanner/cmd/scanr/version"
-	vulns "github.com/CiscoAI/kubeflow-scanner/cmd/scanr/vulns"
 	log "github.com/sirupsen/logrus"
 	"github.com/spf13/cobra"
 )
@@ -42,7 +41,6 @@ func NewCommand() *cobra.Command {
 	cmd.PersistentFlags().StringVar(&flags.Scanner, "scanner", "anchore", "Choice of vulnerability scanner.")
 	// sub-commands
 	cmd.AddCommand(repo.NewCommand())
-	cmd.AddCommand(vulns.NewCommand())
 	cmd.AddCommand(image.NewCommand())
 	cmd.AddCommand(server.NewCommand())
 	cmd.AddCommand(version.NewCommand())

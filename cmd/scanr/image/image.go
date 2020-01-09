@@ -1,6 +1,9 @@
 package image
 
 import (
+	"github.com/CiscoAI/kubeflow-scanner/cmd/scanr/image/add"
+	"github.com/CiscoAI/kubeflow-scanner/cmd/scanr/image/get"
+	"github.com/CiscoAI/kubeflow-scanner/cmd/scanr/image/vuln"
 	"github.com/CiscoAI/kubeflow-scanner/pkg/scan"
 	log "github.com/sirupsen/logrus"
 	"github.com/spf13/cobra"
@@ -25,6 +28,10 @@ func NewCommand() *cobra.Command {
 	}
 	cmd.Flags().StringVar(&flags.Image, "image", "", "image name")
 	cmd.Flags().StringVar(&flags.GcpProject, "project", "", "GCP Project Name")
+	// sub-commands
+	cmd.AddCommand(add.NewCommand())
+	cmd.AddCommand(get.NewCommand())
+	cmd.AddCommand(vuln.NewCommand())
 	return cmd
 }
 
