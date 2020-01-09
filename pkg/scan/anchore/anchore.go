@@ -4,11 +4,16 @@ import (
 	"bytes"
 	"context"
 	"encoding/json"
+	"encoding/xml"
+	"errors"
 	"fmt"
 	"io/ioutil"
 	"net/http"
 	"os"
+	"regexp"
 
+	"github.com/CiscoAI/kubeflow-scanner/pkg/scan"
+	anchore "github.com/anchore/kubernetes-admission-controller/pkg/anchore/client"
 	log "github.com/sirupsen/logrus"
 )
 
@@ -20,7 +25,10 @@ import (
 // Step 3. Poll service for Analysis Status - GetImage() function
 // Step 4. Fetch all Critical and High Vulnerabilities - GetVuln() function
 
-// Reference code: https://github.com/banzaicloud/anchore-image-validator/blob/master/pkg/anchore/client.go
+// Reference code: https://github.com/anchore/kubernetes-admission-controller/tree/master/pkg/anchore/client
+
+var xmlCheck = regexp.MustCompile(`(?i:(?:application|text)/xml)`)
+var jsonCheck = regexp.MustCompile(`(?i:(?:application|text)/(?:vnd\.[^;]+\+)?json)`)
 
 // Client holds the information needed to authenticate to a service endpoint
 type Client struct {
@@ -84,11 +92,28 @@ func anchoreRequest(ctx context.Context, path string, method string, bodyParams 
 	if resp.StatusCode != 200 {
 		return nil, fmt.Errorf("anchore request returned a non-zero error: %s", bodyText)
 	}
-	log.WithFields(log.Fields{
-		"Response": fmt.Sprintf("%s", bodyText),
-	}).Info("Anchore Response Body")
 
 	return bodyText, nil
+}
+
+func anchoreResponseDecode(v interface{}, b []byte, contentType string) (err error) {
+	if s, ok := v.(*string); ok {
+		*s = string(b)
+		return nil
+	}
+	if xmlCheck.MatchString(contentType) {
+		if err = xml.Unmarshal(b, v); err != nil {
+			return err
+		}
+		return nil
+	}
+	if jsonCheck.MatchString(contentType) {
+		if err = json.Unmarshal(b, v); err != nil {
+			return err
+		}
+		return nil
+	}
+	return errors.New("undefined response type")
 }
 
 func getImageDigest(ctx context.Context, imageName string) (string, error) {
@@ -110,7 +135,7 @@ func getImageDigest(ctx context.Context, imageName string) (string, error) {
 // Step 1 in the Anchore Scanning Workflow
 func ScanImage(ctx context.Context, imageName string) error {
 	params := map[string]string{"tag": imageName}
-	_, err := anchoreRequest(ctx, "/images?force=true&autosubscribe=false", "POST", params)
+	addImageResponseBody, err := anchoreRequest(ctx, "/images?force=true&autosubscribe=false", "POST", params)
 	if err != nil {
 		return err
 	}
@@ -119,6 +144,12 @@ func ScanImage(ctx context.Context, imageName string) error {
 		"Image": imageName,
 	}).Info("Added image to be scanned")
 
+	var anchoreImages []anchore.AnchoreImage
+	err = anchoreResponseDecode(&anchoreImages, addImageResponseBody, "application/json")
+	if err != nil {
+		return err
+	}
+	log.Infof("Anchore Image Add Analysis Status: %s", anchoreImages[0].AnalysisStatus)
 	return nil
 }
 
@@ -132,14 +163,17 @@ func GetImage(ctx context.Context, imageName string) error {
 	}
 	log.Infof("Image Digest: %s", digest)
 	params := map[string]string{"digest": digest, "tag": imageName}
-	_, err = anchoreRequest(ctx, "/images", "GET", params)
+	getImageResponseBody, err := anchoreRequest(ctx, "/images", "GET", params)
 	if err != nil {
 		return err
 	}
 
-	log.WithFields(log.Fields{
-		"Image": imageName,
-	}).Info("Image Scan Response")
+	var anchoreImages []anchore.AnchoreImage
+	err = anchoreResponseDecode(&anchoreImages, getImageResponseBody, "application/json")
+	if err != nil {
+		return err
+	}
+	log.Infof("Anchore Image Add Analysis Status: %s", anchoreImages[0].AnalysisStatus)
 
 	return nil
 }
@@ -147,16 +181,58 @@ func GetImage(ctx context.Context, imageName string) error {
 // GetVuln fetches all the vulnerabilties for an image that has completed scanning analysis
 // Step 4 and final step in Anchore scanning workflow, once GetImage indicates a completed scan
 // GetVuln is called
-func GetVuln(ctx context.Context, imageName string) error {
+func GetVuln(ctx context.Context, imageName string) ([]*scan.Vulnerability, error) {
 	digest, err := getImageDigest(ctx, imageName)
 	if err != nil {
-		return err
+		return nil, err
 	}
 	log.Infof("Image Digest: %s", digest)
 	requestPath := "/images/" + digest + "/vuln/all"
-	_, err = anchoreRequest(ctx, requestPath, "GET", nil)
+	getVulnResponse, err := anchoreRequest(ctx, requestPath, "GET", nil)
 	if err != nil {
-		return err
+		return nil, err
 	}
-	return nil
+
+	var vulnResponse anchore.VulnerabilityResponse
+	err = anchoreResponseDecode(&vulnResponse, getVulnResponse, "application/json")
+	if err != nil {
+		return nil, err
+	}
+
+	// Iterate over all the vulnerabilities and if they are 'High' or 'Critical' vulns
+	// then list them with the Identifier
+	highVulns := 0
+	criticalVulns := 0
+	var imageVuln []*scan.Vulnerability
+	for _, vuln := range vulnResponse.Vulnerabilities {
+		if vuln.Severity == "High" || vuln.Severity == "Critical" {
+			if vuln.Severity == "High" {
+				highVulns++
+			} else if vuln.Severity == "Critical" {
+				criticalVulns++
+			}
+			log.Infof("CVE Identifier: %s", vuln.Vuln)
+			log.Infof("Package: %s", vuln.PackageName)
+			log.Infof("Package Version: %s", vuln.PackageVersion)
+			log.Infof("Fix: %s", vuln.Fix)
+			log.Infof("URL: %s", vuln.Url)
+			log.Infof("URL: %s", vuln.Severity)
+			log.Infof("---------------------------------------")
+			currentVuln := &scan.Vulnerability{
+				Identifier:     vuln.Vuln,
+				PackageName:    vuln.PackageName,
+				PackageVersion: vuln.PackageVersion,
+				Fix:            vuln.Fix,
+				URL:            vuln.Url,
+				Severity:       vuln.Severity,
+			}
+			imageVuln = append(imageVuln, currentVuln)
+		}
+	}
+	// Display the total number of vulnerabilities
+	log.Infof("Total Vulnerabilities: %v", len(vulnResponse.Vulnerabilities))
+	// Display the total High and Critical vulnerabilities
+	log.Infof("High: %v", highVulns)
+	log.Infof("Critical: %v", criticalVulns)
+	return imageVuln, nil
 }

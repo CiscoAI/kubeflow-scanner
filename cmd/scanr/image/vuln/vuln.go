@@ -25,7 +25,7 @@ func NewCommand() *cobra.Command {
 			ctx, cancel := context.WithTimeout(ctx, 10*time.Second)
 			defer cancel()
 
-			err := anchore.GetVuln(ctx, args[0])
+			_, err := anchore.GetVuln(ctx, args[0])
 			if err != nil {
 				return err
 			}

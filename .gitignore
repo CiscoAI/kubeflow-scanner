@@ -1,3 +1,2 @@
-images.txt
-cmd/bin/
-.helm3/
+bin/
+server/

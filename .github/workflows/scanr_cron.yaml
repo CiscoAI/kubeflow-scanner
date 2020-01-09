@@ -1,15 +1,31 @@
-# # Define a GitHub Action periodic workflow to determine list all 
-# # vulnerabilities in a version of Kubeflow
-# name: Scan for Vulnerabilties in Kubeflow
-# on:
-#   schedule:
-#     - cron: '0 17 * * 3' # 9am PT every Wednesday => 5pm every Wednesday UTC
-# jobs:
-#   build:
-#     runs-on: ubuntu-latest
-#     steps:
-#     - uses: actions/checkout@v1
-#     - uses: anchore/scan-action@v1.0.1
-#       with:
-#         image-reference: "localbuild/testimage:latest"
-#         fail-build: true
+# Define a GitHub Action periodic workflow to determine list all 
+# vulnerabilities in a Kubeflow deployment
+name: Scan for Vulnerabilties in Kubeflow
+on:
+  schedule:
+    - cron: '0 17 * * 3' # 9am PT every Wednesday ==> 5pm every Wednesday UTC
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    name: Create Vulnerability Report
+    steps:
+    - name: Step 1 - Checkout Repo
+      uses: actions/checkout@v1
+    - name: Step 2 - Setup KinD cluster
+      uses: engineerd/setup-kind@v0.2.0
+      with:
+          version: "v0.5.0"
+    - name: Step 3 - Install Kubeflow
+      uses: swiftdiaries/kfctl-kind-action@v1
+      env:
+        KUBECONFIG: "/home/runner/.kube/kind-config-kind"
+    - name: Step 4 - Install Anchore
+      uses: anchore/scan-action@v1.0.1
+    - name: Step 5 - Setup Go
+      uses: actions/setup-go@v1
+      with:
+        go-version: '1.13.0'
+      env:
+        KUBECONFIG: "/home/runner/.kube/kind-config-kind"
+        ANCHORE_CLI_URL: "localhost:8228/v1"
+    - run: go run cmd/scanr.go k8s --kubeconfig $KUBECONFIG --namespace kubeflow
