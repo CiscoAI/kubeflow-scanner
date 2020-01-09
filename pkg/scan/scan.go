@@ -12,6 +12,12 @@ import (
 	grafeaspb "google.golang.org/genproto/googleapis/grafeas/v1"
 )
 
+// Implementation Notes:
+// All tools - CLI, Kubernetes Webhook should enter here and get directed to the appropriate scanner backend
+// Right now, the CLI tool is calling the anchore client directly. This should be changed out soon.
+// This is done not as a another layer of mis-direction
+// but to add flexibility to use whatever scanning backend the user wants to.
+
 type ResourceCVEList struct {
 	ResourceURI  string
 	CVENotes     []string

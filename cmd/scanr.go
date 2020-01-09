@@ -3,10 +3,11 @@ package main
 import (
 	"os"
 
-	image "github.com/CiscoAI/kubeflow-scanner/cmd/scanr/image"
-	repo "github.com/CiscoAI/kubeflow-scanner/cmd/scanr/repo"
-	server "github.com/CiscoAI/kubeflow-scanner/cmd/scanr/server"
-	version "github.com/CiscoAI/kubeflow-scanner/cmd/scanr/version"
+	"github.com/CiscoAI/kubeflow-scanner/cmd/scanr/image"
+	"github.com/CiscoAI/kubeflow-scanner/cmd/scanr/k8s"
+	"github.com/CiscoAI/kubeflow-scanner/cmd/scanr/kf"
+	"github.com/CiscoAI/kubeflow-scanner/cmd/scanr/server"
+	"github.com/CiscoAI/kubeflow-scanner/cmd/scanr/version"
 	log "github.com/sirupsen/logrus"
 	"github.com/spf13/cobra"
 )
@@ -40,7 +41,8 @@ func NewCommand() *cobra.Command {
 	cmd.PersistentFlags().StringVar(&flags.Registry, "registry", "gcr.io/kubeflow-images-public", "The image registry from where we pick the Kubeflow images.")
 	cmd.PersistentFlags().StringVar(&flags.Scanner, "scanner", "anchore", "Choice of vulnerability scanner.")
 	// sub-commands
-	cmd.AddCommand(repo.NewCommand())
+	cmd.AddCommand(k8s.NewCommand())
+	cmd.AddCommand(kf.NewCommand())
 	cmd.AddCommand(image.NewCommand())
 	cmd.AddCommand(server.NewCommand())
 	cmd.AddCommand(version.NewCommand())

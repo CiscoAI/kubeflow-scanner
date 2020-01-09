@@ -12,6 +12,7 @@ import (
 	"os"
 	"regexp"
 
+	"github.com/CiscoAI/kubeflow-scanner/pkg/scan"
 	anchore "github.com/anchore/kubernetes-admission-controller/pkg/anchore/client"
 	log "github.com/sirupsen/logrus"
 )
@@ -24,7 +25,7 @@ import (
 // Step 3. Poll service for Analysis Status - GetImage() function
 // Step 4. Fetch all Critical and High Vulnerabilities - GetVuln() function
 
-// Reference code: https://github.com/banzaicloud/anchore-image-validator/blob/master/pkg/anchore/client.go
+// Reference code: https://github.com/anchore/kubernetes-admission-controller/tree/master/pkg/anchore/client
 
 var xmlCheck = regexp.MustCompile(`(?i:(?:application|text)/xml)`)
 var jsonCheck = regexp.MustCompile(`(?i:(?:application|text)/(?:vnd\.[^;]+\+)?json)`)
@@ -180,29 +181,58 @@ func GetImage(ctx context.Context, imageName string) error {
 // GetVuln fetches all the vulnerabilties for an image that has completed scanning analysis
 // Step 4 and final step in Anchore scanning workflow, once GetImage indicates a completed scan
 // GetVuln is called
-func GetVuln(ctx context.Context, imageName string) error {
+func GetVuln(ctx context.Context, imageName string) ([]*scan.Vulnerability, error) {
 	digest, err := getImageDigest(ctx, imageName)
 	if err != nil {
-		return err
+		return nil, err
 	}
 	log.Infof("Image Digest: %s", digest)
 	requestPath := "/images/" + digest + "/vuln/all"
 	getVulnResponse, err := anchoreRequest(ctx, requestPath, "GET", nil)
 	if err != nil {
-		return err
+		return nil, err
 	}
 
 	var vulnResponse anchore.VulnerabilityResponse
 	err = anchoreResponseDecode(&vulnResponse, getVulnResponse, "application/json")
 	if err != nil {
-		return err
+		return nil, err
 	}
-	log.Infof("Total Vulnerabilities: %v", len(vulnResponse.Vulnerabilities))
+
+	// Iterate over all the vulnerabilities and if they are 'High' or 'Critical' vulns
+	// then list them with the Identifier
+	highVulns := 0
+	criticalVulns := 0
+	var imageVuln []*scan.Vulnerability
 	for _, vuln := range vulnResponse.Vulnerabilities {
 		if vuln.Severity == "High" || vuln.Severity == "Critical" {
-			log.Infof("Vulnerability Identifier: %s", vuln.Vuln)
-			log.Infof("Affected Package Name: %s", vuln.PackageName)
+			if vuln.Severity == "High" {
+				highVulns++
+			} else if vuln.Severity == "Critical" {
+				criticalVulns++
+			}
+			log.Infof("CVE Identifier: %s", vuln.Vuln)
+			log.Infof("Package: %s", vuln.PackageName)
+			log.Infof("Package Version: %s", vuln.PackageVersion)
+			log.Infof("Fix: %s", vuln.Fix)
+			log.Infof("URL: %s", vuln.Url)
+			log.Infof("URL: %s", vuln.Severity)
+			log.Infof("---------------------------------------")
+			currentVuln := &scan.Vulnerability{
+				Identifier:     vuln.Vuln,
+				PackageName:    vuln.PackageName,
+				PackageVersion: vuln.PackageVersion,
+				Fix:            vuln.Fix,
+				URL:            vuln.Url,
+				Severity:       vuln.Severity,
+			}
+			imageVuln = append(imageVuln, currentVuln)
 		}
 	}
-	return nil
+	// Display the total number of vulnerabilities
+	log.Infof("Total Vulnerabilities: %v", len(vulnResponse.Vulnerabilities))
+	// Display the total High and Critical vulnerabilities
+	log.Infof("High: %v", highVulns)
+	log.Infof("Critical: %v", criticalVulns)
+	return imageVuln, nil
 }
