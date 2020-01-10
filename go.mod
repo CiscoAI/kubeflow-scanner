@@ -7,6 +7,7 @@ require (
 	github.com/NYTimes/openapi2proto v0.2.2 // indirect
 	github.com/anchore/kubernetes-admission-controller v0.2.3-0.20191210184938-120f400db688
 	github.com/antihax/optional v1.0.0
+	github.com/cenkalti/backoff v2.2.1+incompatible
 	github.com/docker/cli v0.0.0-20191220145525-ba63a92655c0 // indirect
 	github.com/dolmen-go/jsonptr v0.0.0-20190605225012-a9a7ae01cd7d // indirect
 	github.com/google/go-cmp v0.3.1 // indirect
@@ -22,6 +23,7 @@ require (
 	google.golang.org/appengine v1.6.5 // indirect
 	google.golang.org/genproto v0.0.0-20191115221424-83cc0476cb11
 	gopkg.in/yaml.v2 v2.2.7
+	k8s.io/api v0.0.0-20190620084959-7cf5895f2711
 	k8s.io/apimachinery v0.0.0-20191028221656-72ed19daf4bb
 	k8s.io/client-go v11.0.0+incompatible
 	sigs.k8s.io/kind v0.6.0

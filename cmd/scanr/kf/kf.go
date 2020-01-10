@@ -26,12 +26,12 @@ func NewCommand() *cobra.Command {
 	}
 	cmd.Flags().StringVar(&flags.KFDef, "kfdef", "", "KFDef for Kubeflow deployment")
 	cmd.Flags().StringVar(&flags.Kubeconfig, "kubeconfig", "", "Point to Kubernetes cluster to be used")
-	cmd.Flags().StringVar(&flags.Namespace, "namespace", "", "Kubernetes namespace to scan")
+	cmd.Flags().StringVar(&flags.Namespace, "namespace", "kubeflow", "Kubernetes namespace to scan")
 	return cmd
 }
 
 func kfscan(cmd *cobra.Command, args []string, flags *flagpole) error {
-	report, err := kubernetes.ScanKFCluster(flags.KFDef, flags.Kubeconfig, flags.Namespace)
+	report, err := kubernetes.ScanCluster(flags.Namespace)
 	if err != nil {
 		return err
 	}
