@@ -17,17 +17,24 @@ type ImageVulnerabilityReport struct {
 	Vulns    []*Vulnerability
 }
 
-// VulnerabilityReport holds vulnerability information for a k8s cluster
-type VulnerabilityReport struct {
+// NamespaceVulnerabilityReport holds vulnerability information for a k8s cluster
+type NamespaceVulnerabilityReport struct {
 	Namespace   string
 	BadVulns    int // Total High + Critical vulns
-	VulnByImage map[string][]*Vulnerability
+	VulnByImage []*ImageVulnerabilityReport
 }
 
 // KFVulnerabilityReport holds vulnerability information across all images in a Kubeflow deployment
 type KFVulnerabilityReport struct {
-	KFDef       string
-	Platform    string
-	VulnByImage map[string][]*Vulnerability
-	//BadVulns    int // Total High + Critical vulns
+	KFDef           string
+	Platform        string
+	BadVulns        int // Total High + Critical vulns
+	VulnByNamespace []*NamespaceVulnerabilityReport
+}
+
+// ClusterVulnerabilityReport k8s cluster-wide vulnerability report
+type ClusterVulnerabilityReport struct {
+	ClusterContext  string
+	BadVulns        int
+	VulnByNamespace []*NamespaceVulnerabilityReport
 }

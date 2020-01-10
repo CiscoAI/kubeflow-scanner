@@ -4,6 +4,9 @@ mod:
 	go mod tidy
 	go mod download
 
+gen-proto:
+	bash scripts/generate_protos.sh
+
 build:
 	go build -o cmd/bin/scanr-mac cmd/scanr.go
 

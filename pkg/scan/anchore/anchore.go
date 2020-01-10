@@ -12,7 +12,7 @@ import (
 	"os"
 	"regexp"
 
-	"github.com/CiscoAI/kubeflow-scanner/pkg/scan"
+	pbv1alpha1 "github.com/CiscoAI/kubeflow-scanner/gen/pb-go/proto/v1alpha1"
 	anchore "github.com/anchore/kubernetes-admission-controller/pkg/anchore/client"
 	log "github.com/sirupsen/logrus"
 )
@@ -182,7 +182,7 @@ func GetImage(ctx context.Context, imageName string) error {
 // GetVuln fetches all the vulnerabilties for an image that has completed scanning analysis
 // Step 4 and final step in Anchore scanning workflow, once GetImage indicates a completed scan
 // GetVuln is called
-func GetVuln(ctx context.Context, imageName string) (*scan.ImageVulnerabilityReport, error) {
+func GetVuln(ctx context.Context, imageName string) (*pbv1alpha1.ImageVulnerabilityReport, error) {
 	digest, err := getImageDigest(ctx, imageName)
 	if err != nil {
 		return nil, err
@@ -202,9 +202,9 @@ func GetVuln(ctx context.Context, imageName string) (*scan.ImageVulnerabilityRep
 
 	// Iterate over all the vulnerabilities and if they are 'High' or 'Critical' vulns
 	// then list them with the Identifier
-	highVulns := 0
-	criticalVulns := 0
-	var imageVuln []*scan.Vulnerability
+	var highVulns int32 = 0
+	var criticalVulns int32 = 0
+	var imageVuln []*pbv1alpha1.Vulnerability
 	for _, vuln := range vulnResponse.Vulnerabilities {
 		if vuln.Severity == "High" || vuln.Severity == "Critical" {
 			if vuln.Severity == "High" {
@@ -219,12 +219,12 @@ func GetVuln(ctx context.Context, imageName string) (*scan.ImageVulnerabilityRep
 			log.Infof("URL: %s", vuln.Url)
 			log.Infof("URL: %s", vuln.Severity)
 			log.Infof("---------------------------------------")
-			currentVuln := &scan.Vulnerability{
+			currentVuln := &pbv1alpha1.Vulnerability{
 				Identifier:     vuln.Vuln,
 				PackageName:    vuln.PackageName,
 				PackageVersion: vuln.PackageVersion,
 				Fix:            vuln.Fix,
-				URL:            vuln.Url,
+				Url:            vuln.Url,
 				Severity:       vuln.Severity,
 			}
 			imageVuln = append(imageVuln, currentVuln)
@@ -236,7 +236,8 @@ func GetVuln(ctx context.Context, imageName string) (*scan.ImageVulnerabilityRep
 	log.Infof("High + Critical Vulnerabilities: %v", highVulns+criticalVulns)
 	log.Infof("High: %v", highVulns)
 	log.Infof("Critical: %v", criticalVulns)
-	imageVulnReport := &scan.ImageVulnerabilityReport{
+
+	imageVulnReport := &pbv1alpha1.ImageVulnerabilityReport{
 		Image:    imageName,
 		Vulns:    imageVuln,
 		BadVulns: highVulns + criticalVulns,

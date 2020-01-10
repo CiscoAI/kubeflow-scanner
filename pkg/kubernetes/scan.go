@@ -9,7 +9,7 @@ import (
 	"sync"
 	"time"
 
-	"github.com/CiscoAI/kubeflow-scanner/pkg/scan"
+	pbv1alpha1 "github.com/CiscoAI/kubeflow-scanner/gen/pb-go/proto/v1alpha1"
 	"github.com/CiscoAI/kubeflow-scanner/pkg/scan/anchore"
 	"github.com/cenkalti/backoff"
 	log "github.com/sirupsen/logrus"
@@ -18,7 +18,7 @@ import (
 
 var lock sync.Mutex
 
-func ImageScanWorkflow(image string) (*scan.ImageVulnerabilityReport, error) {
+func ImageScanWorkflow(image string) (*pbv1alpha1.ImageVulnerabilityReport, error) {
 	ctx := context.Background()
 	ctx, cancel := context.WithTimeout(ctx, 3*time.Minute)
 	defer cancel()
@@ -48,15 +48,14 @@ func ImageScanWorkflow(image string) (*scan.ImageVulnerabilityReport, error) {
 }
 
 // ScanCluster - given a KF cluster iterate through all images and compile a VulnReport
-func ScanCluster(namespace string) (scan.VulnerabilityReport, error) {
-	vulnReport := scan.VulnerabilityReport{}
+func ScanCluster(namespace string) (*pbv1alpha1.NamespaceVulnerabilityReport, error) {
+	vulnReport := &pbv1alpha1.NamespaceVulnerabilityReport{}
 	// Iterate through pods, get all images and scan them for vulns
 	images, err := ImageLister(namespace)
 	if err != nil {
 		return vulnReport, err
 	}
 	vulnReport.Namespace = namespace
-	vulnReport.VulnByImage = make(map[string][]*scan.Vulnerability)
 	for _, image := range images {
 		vulnPerImageReport, err := ImageScanWorkflow(image)
 		if err != nil {
@@ -66,7 +65,7 @@ func ScanCluster(namespace string) (scan.VulnerabilityReport, error) {
 			return vulnReport, fmt.Errorf("Vulns returned nil for scan")
 		}
 		if vulnPerImageReport.BadVulns > 0 {
-			vulnReport.VulnByImage[image] = append(vulnReport.VulnByImage[image], vulnPerImageReport.Vulns...)
+			vulnReport.ImageVulnReport = append(vulnReport.ImageVulnReport, vulnPerImageReport)
 		}
 		vulnReport.BadVulns += vulnPerImageReport.BadVulns
 		log.Infof("--------------------")
@@ -74,7 +73,7 @@ func ScanCluster(namespace string) (scan.VulnerabilityReport, error) {
 	return vulnReport, nil
 }
 
-func WriteReportToFile(outputFilePath string, vulnReport scan.VulnerabilityReport) error {
+func WriteReportToFile(outputFilePath string, vulnReport *pbv1alpha1.NamespaceVulnerabilityReport) error {
 	err := save(outputFilePath, vulnReport)
 	if err != nil {
 		return err
