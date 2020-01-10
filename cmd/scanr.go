@@ -28,8 +28,8 @@ func NewCommand() *cobra.Command {
 	cmd := &cobra.Command{
 		Args:  cobra.NoArgs,
 		Use:   "scanr",
-		Short: "scanr is a tool for scanning Kubeflow artifacts",
-		Long:  `scanr is a CLI tool for scanning Kubeflow images for vulnerabilities.`,
+		Short: "scanr is a tool for vulnerability scanning Cloud Native artifacts",
+		Long:  `scanr is a CLI tool for vulnerability scanning Cloud Native artifacts.`,
 		PersistentPreRunE: func(cmd *cobra.Command, args []string) error {
 			return runE(flags, cmd, args)
 		},
