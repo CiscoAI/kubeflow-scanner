@@ -2,13 +2,12 @@ package k8s
 
 import (
 	"github.com/CiscoAI/kubeflow-scanner/pkg/kubernetes"
-	log "github.com/sirupsen/logrus"
 	"github.com/spf13/cobra"
 )
 
 type flagpole struct {
-	Kubeconfig string
-	Namespace  string
+	OutputFilePath string
+	Namespace      string
 }
 
 // NewCommand returns a new cobra.Command for repo
@@ -23,16 +22,19 @@ func NewCommand() *cobra.Command {
 			return k8scan(cmd, args, flags)
 		},
 	}
-	cmd.Flags().StringVar(&flags.Kubeconfig, "kubeconfig", "", "Point to Kubernetes cluster to be used")
 	cmd.Flags().StringVar(&flags.Namespace, "namespace", "", "Kubernetes namespace to scan")
+	cmd.Flags().StringVar(&flags.OutputFilePath, "out", "vuln_report.yaml", "Output file path to save the vulnerability report")
 	return cmd
 }
 
 func k8scan(cmd *cobra.Command, args []string, flags *flagpole) error {
-	report, err := kubernetes.ScanCluster(flags.Kubeconfig, flags.Namespace)
+	report, err := kubernetes.ScanCluster(flags.Namespace)
 	if err != nil {
 		return err
 	}
-	log.Infof("Vulnerability Report: %v", report)
+	err = kubernetes.WriteReportToFile(flags.OutputFilePath, report)
+	if err != nil {
+		return err
+	}
 	return nil
 }

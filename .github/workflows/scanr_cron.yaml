@@ -2,6 +2,9 @@
 # vulnerabilities in a Kubeflow deployment
 name: Scan for Vulnerabilties in Kubeflow
 on:
+  pull_request:
+    branches:
+      - master
   schedule:
     - cron: '0 17 * * 3' # 9am PT every Wednesday ==> 5pm every Wednesday UTC
 jobs:
@@ -28,4 +31,4 @@ jobs:
       env:
         KUBECONFIG: "/home/runner/.kube/kind-config-kind"
         ANCHORE_CLI_URL: "localhost:8228/v1"
-    - run: go run cmd/scanr.go k8s --kubeconfig $KUBECONFIG --namespace kubeflow
+    - run: go run cmd/scanr.go k8s --namespace kubeflow

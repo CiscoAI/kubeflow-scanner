@@ -135,7 +135,7 @@ func getImageDigest(ctx context.Context, imageName string) (string, error) {
 // Step 1 in the Anchore Scanning Workflow
 func ScanImage(ctx context.Context, imageName string) error {
 	params := map[string]string{"tag": imageName}
-	addImageResponseBody, err := anchoreRequest(ctx, "/images?force=true&autosubscribe=false", "POST", params)
+	addImageResponseBody, err := anchoreRequest(ctx, "/images?autosubscribe=false", "POST", params)
 	if err != nil {
 		return err
 	}
@@ -149,7 +149,6 @@ func ScanImage(ctx context.Context, imageName string) error {
 	if err != nil {
 		return err
 	}
-	log.Infof("Anchore Image Add Analysis Status: %s", anchoreImages[0].AnalysisStatus)
 	return nil
 }
 
@@ -173,15 +172,17 @@ func GetImage(ctx context.Context, imageName string) error {
 	if err != nil {
 		return err
 	}
-	log.Infof("Anchore Image Add Analysis Status: %s", anchoreImages[0].AnalysisStatus)
-
-	return nil
+	log.Infof("Anchore Image Analysis Status: %s", anchoreImages[0].AnalysisStatus)
+	if anchoreImages[0].AnalysisStatus == "analyzed" {
+		return nil
+	}
+	return fmt.Errorf("Image analysis status: %v", anchoreImages[0].AnalysisStatus)
 }
 
 // GetVuln fetches all the vulnerabilties for an image that has completed scanning analysis
 // Step 4 and final step in Anchore scanning workflow, once GetImage indicates a completed scan
 // GetVuln is called
-func GetVuln(ctx context.Context, imageName string) ([]*scan.Vulnerability, error) {
+func GetVuln(ctx context.Context, imageName string) (*scan.ImageVulnerabilityReport, error) {
 	digest, err := getImageDigest(ctx, imageName)
 	if err != nil {
 		return nil, err
@@ -232,7 +233,14 @@ func GetVuln(ctx context.Context, imageName string) ([]*scan.Vulnerability, erro
 	// Display the total number of vulnerabilities
 	log.Infof("Total Vulnerabilities: %v", len(vulnResponse.Vulnerabilities))
 	// Display the total High and Critical vulnerabilities
+	log.Infof("High + Critical Vulnerabilities: %v", highVulns+criticalVulns)
 	log.Infof("High: %v", highVulns)
 	log.Infof("Critical: %v", criticalVulns)
-	return imageVuln, nil
+	imageVulnReport := &scan.ImageVulnerabilityReport{
+		Image:    imageName,
+		Vulns:    imageVuln,
+		BadVulns: highVulns + criticalVulns,
+	}
+
+	return imageVulnReport, nil
 }
