@@ -7,12 +7,15 @@ require (
 	github.com/anchore/kubernetes-admission-controller v0.2.3-0.20191210184938-120f400db688
 	github.com/antihax/optional v1.0.0 // indirect
 	github.com/cenkalti/backoff v2.2.1+incompatible
+	github.com/genuinetools/reg v0.16.1
 	github.com/gogo/protobuf v1.3.1 // indirect
 	github.com/golang/protobuf v1.3.2
-	github.com/google/go-cmp v0.3.1 // indirect
 	github.com/googleapis/gnostic v0.3.1 // indirect
+	github.com/gorilla/mux v1.7.3
 	github.com/json-iterator/go v1.1.8 // indirect
 	github.com/konsorten/go-windows-terminal-sequences v1.0.2 // indirect
+	github.com/mitchellh/go-wordwrap v1.0.0
+	github.com/shurcooL/httpfs v0.0.0-20190707220628-8d4bc4ba7749
 	github.com/sirupsen/logrus v1.4.2
 	github.com/spf13/cobra v0.0.5
 	github.com/spf13/pflag v1.0.5 // indirect

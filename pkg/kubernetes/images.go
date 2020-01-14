@@ -25,21 +25,37 @@ func ImageLister(namespace string) ([]string, error) {
 	if err != nil {
 		return images, err
 	}
+	log.Infof("Pods to be scanned:")
+	log.Infof("-----------------------")
 	for _, pod := range pods {
-		log.Infof("Pod to be scanned: %v", pod.Name)
-		log.Infof("-----------------")
+		log.Infof("Pod name: %v", pod.Name)
 		images = append(images, PodImages(pod)...)
 	}
+	log.Infof("-----------------------")
 	return images, nil
 }
 
 func PodImages(pod v1.Pod) []string {
 	images := []string{}
+	log.Infof("    Images to be scanned:")
+	log.Infof("-----------------------")
 	for _, ic := range pod.Spec.InitContainers {
-		images = append(images, ic.Image)
+		if ic.Image != "" {
+			log.Infof("    Image name: %v", ic.Image)
+			images = append(images, ic.Image)
+		}
 	}
 	for _, c := range pod.Spec.Containers {
-		images = append(images, c.Image)
+		if c.Image != "" {
+			log.Infof("    Image name: %v", c.Image)
+			images = append(images, c.Image)
+		}
 	}
+	log.Infof("-----------------------")
 	return images
+}
+
+func removeDuplicates(images []string) error {
+
+	return nil
 }

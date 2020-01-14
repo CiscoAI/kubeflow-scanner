@@ -172,9 +172,13 @@ func GetImage(ctx context.Context, imageName string) error {
 	if err != nil {
 		return err
 	}
-	log.Infof("Anchore Image Analysis Status: %s", anchoreImages[0].AnalysisStatus)
 	if anchoreImages[0].AnalysisStatus == "analyzed" {
+		log.Infof("Anchore Image Analysis Status: %s", anchoreImages[0].AnalysisStatus)
 		return nil
+	} else if anchoreImages[0].AnalysisStatus == "analysis_failed" {
+		log.Errorf("Anchore Image Analysis Status: %s", anchoreImages[0].AnalysisStatus)
+	} else {
+		log.Warnf("Image analysis status: %v", anchoreImages[0].AnalysisStatus)
 	}
 	return fmt.Errorf("Image analysis status: %v", anchoreImages[0].AnalysisStatus)
 }

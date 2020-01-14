@@ -35,7 +35,8 @@ func ImageScanWorkflow(image string) (*pbv1alpha1.ImageVulnerabilityReport, erro
 		return nil
 	}
 	getScanbackoff := backoff.NewExponentialBackOff()
-	getScanbackoff.MaxElapsedTime = 5 * time.Minute
+	// Set max backoff time to 15 minutes
+	getScanbackoff.MaxElapsedTime = 15 * time.Minute
 	err = backoff.Retry(retryGetImage, getScanbackoff)
 	if err != nil {
 		return nil, err
@@ -47,7 +48,8 @@ func ImageScanWorkflow(image string) (*pbv1alpha1.ImageVulnerabilityReport, erro
 	return vulns, nil
 }
 
-// ScanCluster - given a KF cluster iterate through all images and compile a VulnReport
+// ScanCluster - given a k8s cluster iterate through all images in a namespace and compile a VulnReport
+// When no namespace is given, scans through all namespaces and compiles a VulnReport
 func ScanCluster(namespace string) (*pbv1alpha1.NamespaceVulnerabilityReport, error) {
 	vulnReport := &pbv1alpha1.NamespaceVulnerabilityReport{}
 	// Iterate through pods, get all images and scan them for vulns
@@ -61,14 +63,17 @@ func ScanCluster(namespace string) (*pbv1alpha1.NamespaceVulnerabilityReport, er
 		if err != nil {
 			return vulnReport, nil
 		}
-		if vulnPerImageReport.Vulns == nil && vulnPerImageReport.BadVulns > 0 {
-			return vulnReport, fmt.Errorf("Vulns returned nil for scan")
+		// Logic to handle cases only when there are bad_vulns and skip when it is 0.
+		if vulnPerImageReport != nil {
+			if vulnPerImageReport.Vulns == nil && vulnPerImageReport.BadVulns > 0 {
+				return vulnReport, fmt.Errorf("Vulns returned nil for scan")
+			}
+			if vulnPerImageReport.BadVulns > 0 {
+				vulnReport.ImageVulnReport = append(vulnReport.ImageVulnReport, vulnPerImageReport)
+			}
+			vulnReport.BadVulns += vulnPerImageReport.BadVulns
+			log.Infof("--------------------")
 		}
-		if vulnPerImageReport.BadVulns > 0 {
-			vulnReport.ImageVulnReport = append(vulnReport.ImageVulnReport, vulnPerImageReport)
-		}
-		vulnReport.BadVulns += vulnPerImageReport.BadVulns
-		log.Infof("--------------------")
 	}
 	return vulnReport, nil
 }
