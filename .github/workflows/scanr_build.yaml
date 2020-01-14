@@ -16,6 +16,7 @@ jobs:
       uses: actions/checkout@v1
     - name: Step 2 - Setup KinD cluster
       uses: engineerd/setup-kind@v0.2.0
+    - name: Step 2.1 - Test KinD cluster  
       run: |
         kubectl cluster-info
         kubectl get po -A
