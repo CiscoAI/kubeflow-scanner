@@ -1,0 +1,2331 @@
+namespace: kubeflow
+badvulns: 247
+imagevulnreport:
+- image: gcr.io/kubeflow-images-public/ingress-setup:latest
+  badvulns: 19
+  vulns:
+  - identifier: CVE-2018-14618
+    packagename: curl
+    packageversion: 7.61.0-r0
+    fix: 7.61.1-r0
+    url: http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2018-14618
+    severity: High
+    xxx_nounkeyedliteral: {}
+    xxx_unrecognized: []
+    xxx_sizecache: 0
+  - identifier: CVE-2018-16839
+    packagename: curl
+    packageversion: 7.61.0-r0
+    fix: 7.61.1-r1
+    url: http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2018-16839
+    severity: High
+    xxx_nounkeyedliteral: {}
+    xxx_unrecognized: []
+    xxx_sizecache: 0
+  - identifier: CVE-2018-16840
+    packagename: curl
+    packageversion: 7.61.0-r0
+    fix: 7.61.1-r1
+    url: http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2018-16840
+    severity: High
+    xxx_nounkeyedliteral: {}
+    xxx_unrecognized: []
+    xxx_sizecache: 0
+  - identifier: CVE-2019-3822
+    packagename: curl
+    packageversion: 7.61.0-r0
+    fix: 7.61.1-r2
+    url: http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-3822
+    severity: High
+    xxx_nounkeyedliteral: {}
+    xxx_unrecognized: []
+    xxx_sizecache: 0
+  - identifier: CVE-2018-20843
+    packagename: expat
+    packageversion: 2.2.5-r0
+    fix: 2.2.7-r0
+    url: http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2018-20843
+    severity: High
+    xxx_nounkeyedliteral: {}
+    xxx_unrecognized: []
+    xxx_sizecache: 0
+  - identifier: CVE-2018-17456
+    packagename: git
+    packageversion: 2.15.2-r0
+    fix: 2.15.3-r0
+    url: http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2018-17456
+    severity: High
+    xxx_nounkeyedliteral: {}
+    xxx_unrecognized: []
+    xxx_sizecache: 0
+  - identifier: CVE-2019-12900
+    packagename: libbz2
+    packageversion: 1.0.6-r6
+    fix: 1.0.6-r7
+    url: http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-12900
+    severity: High
+    xxx_nounkeyedliteral: {}
+    xxx_unrecognized: []
+    xxx_sizecache: 0
+  - identifier: CVE-2019-14697
+    packagename: libc6-compat
+    packageversion: 1.1.18-r3
+    fix: 1.1.18-r4
+    url: http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-14697
+    severity: High
+    xxx_nounkeyedliteral: {}
+    xxx_unrecognized: []
+    xxx_sizecache: 0
+  - identifier: CVE-2018-14618
+    packagename: libcurl
+    packageversion: 7.61.0-r0
+    fix: 7.61.1-r0
+    url: http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2018-14618
+    severity: High
+    xxx_nounkeyedliteral: {}
+    xxx_unrecognized: []
+    xxx_sizecache: 0
+  - identifier: CVE-2018-16839
+    packagename: libcurl
+    packageversion: 7.61.0-r0
+    fix: 7.61.1-r1
+    url: http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2018-16839
+    severity: High
+    xxx_nounkeyedliteral: {}
+    xxx_unrecognized: []
+    xxx_sizecache: 0
+  - identifier: CVE-2018-16840
+    packagename: libcurl
+    packageversion: 7.61.0-r0
+    fix: 7.61.1-r1
+    url: http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2018-16840
+    severity: High
+    xxx_nounkeyedliteral: {}
+    xxx_unrecognized: []
+    xxx_sizecache: 0
+  - identifier: CVE-2019-3822
+    packagename: libcurl
+    packageversion: 7.61.0-r0
+    fix: 7.61.1-r2
+    url: http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-3822
+    severity: High
+    xxx_nounkeyedliteral: {}
+    xxx_unrecognized: []
+    xxx_sizecache: 0
+  - identifier: CVE-2019-14697
+    packagename: musl
+    packageversion: 1.1.18-r3
+    fix: 1.1.18-r4
+    url: http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-14697
+    severity: High
+    xxx_nounkeyedliteral: {}
+    xxx_unrecognized: []
+    xxx_sizecache: 0
+  - identifier: CVE-2019-14697
+    packagename: musl-utils
+    packageversion: 1.1.18-r3
+    fix: 1.1.18-r4
+    url: http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-14697
+    severity: High
+    xxx_nounkeyedliteral: {}
+    xxx_unrecognized: []
+    xxx_sizecache: 0
+  - identifier: CVE-2019-8457
+    packagename: sqlite-libs
+    packageversion: 3.21.0-r1
+    fix: 3.25.3-r1
+    url: http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-8457
+    severity: High
+    xxx_nounkeyedliteral: {}
+    xxx_unrecognized: []
+    xxx_sizecache: 0
+  - identifier: CVE-2017-17522
+    packagename: Python
+    packageversion: 2.7.14
+    fix: None
+    url: https://nvd.nist.gov/vuln/detail/CVE-2017-17522
+    severity: High
+    xxx_nounkeyedliteral: {}
+    xxx_unrecognized: []
+    xxx_sizecache: 0
+  - identifier: CVE-2015-5652
+    packagename: Python
+    packageversion: 2.7.14
+    fix: None
+    url: https://nvd.nist.gov/vuln/detail/CVE-2015-5652
+    severity: High
+    xxx_nounkeyedliteral: {}
+    xxx_unrecognized: []
+    xxx_sizecache: 0
+  - identifier: VULNDB-137890
+    packagename: Python
+    packageversion: 2.7.14
+    fix: 3.5.1
+    url: https://anchore.ci.ciscolabs.com:443/v1/query/vulnerabilities?id=VULNDB-137890
+    severity: High
+    xxx_nounkeyedliteral: {}
+    xxx_unrecognized: []
+    xxx_sizecache: 0
+  - identifier: VULNDB-181184
+    packagename: Python
+    packageversion: 2.7.14
+    fix: None
+    url: https://anchore.ci.ciscolabs.com:443/v1/query/vulnerabilities?id=VULNDB-181184
+    severity: High
+    xxx_nounkeyedliteral: {}
+    xxx_unrecognized: []
+    xxx_sizecache: 0
+  xxx_nounkeyedliteral: {}
+  xxx_unrecognized: []
+  xxx_sizecache: 0
+- image: gcr.io/kubeflow-images-public/kubernetes-sigs/application:1.0-beta
+  badvulns: 8
+  vulns:
+  - identifier: CVE-2018-0501
+    packagename: apt
+    packageversion: 1.6.1
+    fix: 1.6.3ubuntu0.1
+    url: http://people.ubuntu.com/~ubuntu-security/cve/CVE-2018-0501
+    severity: High
+    xxx_nounkeyedliteral: {}
+    xxx_unrecognized: []
+    xxx_sizecache: 0
+  - identifier: CVE-2019-3462
+    packagename: apt
+    packageversion: 1.6.1
+    fix: 1.6.6ubuntu0.1
+    url: http://people.ubuntu.com/~ubuntu-security/cve/CVE-2019-3462
+    severity: High
+    xxx_nounkeyedliteral: {}
+    xxx_unrecognized: []
+    xxx_sizecache: 0
+  - identifier: CVE-2018-0501
+    packagename: libapt-pkg5.0
+    packageversion: 1.6.1
+    fix: 1.6.3ubuntu0.1
+    url: http://people.ubuntu.com/~ubuntu-security/cve/CVE-2018-0501
+    severity: High
+    xxx_nounkeyedliteral: {}
+    xxx_unrecognized: []
+    xxx_sizecache: 0
+  - identifier: CVE-2019-3462
+    packagename: libapt-pkg5.0
+    packageversion: 1.6.1
+    fix: 1.6.6ubuntu0.1
+    url: http://people.ubuntu.com/~ubuntu-security/cve/CVE-2019-3462
+    severity: High
+    xxx_nounkeyedliteral: {}
+    xxx_unrecognized: []
+    xxx_sizecache: 0
+  - identifier: CVE-2018-16864
+    packagename: libsystemd0
+    packageversion: 237-3ubuntu10
+    fix: 237-3ubuntu10.11
+    url: http://people.ubuntu.com/~ubuntu-security/cve/CVE-2018-16864
+    severity: High
+    xxx_nounkeyedliteral: {}
+    xxx_unrecognized: []
+    xxx_sizecache: 0
+  - identifier: CVE-2018-16865
+    packagename: libsystemd0
+    packageversion: 237-3ubuntu10
+    fix: 237-3ubuntu10.11
+    url: http://people.ubuntu.com/~ubuntu-security/cve/CVE-2018-16865
+    severity: High
+    xxx_nounkeyedliteral: {}
+    xxx_unrecognized: []
+    xxx_sizecache: 0
+  - identifier: CVE-2018-16864
+    packagename: libudev1
+    packageversion: 237-3ubuntu10
+    fix: 237-3ubuntu10.11
+    url: http://people.ubuntu.com/~ubuntu-security/cve/CVE-2018-16864
+    severity: High
+    xxx_nounkeyedliteral: {}
+    xxx_unrecognized: []
+    xxx_sizecache: 0
+  - identifier: CVE-2018-16865
+    packagename: libudev1
+    packageversion: 237-3ubuntu10
+    fix: 237-3ubuntu10.11
+    url: http://people.ubuntu.com/~ubuntu-security/cve/CVE-2018-16865
+    severity: High
+    xxx_nounkeyedliteral: {}
+    xxx_unrecognized: []
+    xxx_sizecache: 0
+  xxx_nounkeyedliteral: {}
+  xxx_unrecognized: []
+  xxx_sizecache: 0
+- image: argoproj/argoui:v2.3.0
+  badvulns: 24
+  vulns:
+  - identifier: CVE-2016-9841
+    packagename: zlib
+    packageversion: 1.2.8-r2
+    fix: 1.2.11-r0
+    url: http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-9841
+    severity: High
+    xxx_nounkeyedliteral: {}
+    xxx_unrecognized: []
+    xxx_sizecache: 0
+  - identifier: CVE-2016-9843
+    packagename: zlib
+    packageversion: 1.2.8-r2
+    fix: 1.2.11-r0
+    url: http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-9843
+    severity: High
+    xxx_nounkeyedliteral: {}
+    xxx_unrecognized: []
+    xxx_sizecache: 0
+  - identifier: SNYK-JS-EXTEND-12179
+    packagename: extend
+    packageversion: 3.0.0
+    fix: '! <2.0.2'
+    url: https://snyk.io/vuln/SNYK-JS-EXTEND-12179
+    severity: High
+    xxx_nounkeyedliteral: {}
+    xxx_unrecognized: []
+    xxx_sizecache: 0
+  - identifier: SNYK-JS-JSYAML-174129
+    packagename: js-yaml
+    packageversion: 3.12.0
+    fix: '! <3.13.1'
+    url: https://snyk.io/vuln/SNYK-JS-JSYAML-174129
+    severity: High
+    xxx_nounkeyedliteral: {}
+    xxx_unrecognized: []
+    xxx_sizecache: 0
+  - identifier: SNYK-JS-LODASH-73638
+    packagename: lodash
+    packageversion: 4.17.10
+    fix: '! <4.17.11'
+    url: https://snyk.io/vuln/SNYK-JS-LODASH-73638
+    severity: High
+    xxx_nounkeyedliteral: {}
+    xxx_unrecognized: []
+    xxx_sizecache: 0
+  - identifier: SNYK-JS-QS-10407
+    packagename: qs
+    packageversion: 6.2.1
+    fix: '! <6.0.4'
+    url: https://snyk.io/vuln/SNYK-JS-QS-10407
+    severity: High
+    xxx_nounkeyedliteral: {}
+    xxx_unrecognized: []
+    xxx_sizecache: 0
+  - identifier: SNYK-JS-SSHPK-12114
+    packagename: sshpk
+    packageversion: 1.10.1
+    fix: '! <1.14.1'
+    url: https://snyk.io/vuln/SNYK-JS-SSHPK-12114
+    severity: High
+    xxx_nounkeyedliteral: {}
+    xxx_unrecognized: []
+    xxx_sizecache: 0
+  - identifier: CVE-2019-10745
+    packagename: assign-deep
+    packageversion: 0.4.7
+    fix: None
+    url: https://nvd.nist.gov/vuln/detail/CVE-2019-10745
+    severity: High
+    xxx_nounkeyedliteral: {}
+    xxx_unrecognized: []
+    xxx_sizecache: 0
+  - identifier: CVE-2017-18589
+    packagename: cookie
+    packageversion: 0.3.1
+    fix: None
+    url: https://nvd.nist.gov/vuln/detail/CVE-2017-18589
+    severity: High
+    xxx_nounkeyedliteral: {}
+    xxx_unrecognized: []
+    xxx_sizecache: 0
+  - identifier: CVE-2019-10744
+    packagename: lodash
+    packageversion: 4.17.10
+    fix: None
+    url: https://nvd.nist.gov/vuln/detail/CVE-2019-10744
+    severity: Critical
+    xxx_nounkeyedliteral: {}
+    xxx_unrecognized: []
+    xxx_sizecache: 0
+  - identifier: CVE-2019-13173
+    packagename: fstream
+    packageversion: 1.0.10
+    fix: None
+    url: https://nvd.nist.gov/vuln/detail/CVE-2019-13173
+    severity: High
+    xxx_nounkeyedliteral: {}
+    xxx_unrecognized: []
+    xxx_sizecache: 0
+  - identifier: CVE-2018-16492
+    packagename: extend
+    packageversion: 3.0.0
+    fix: None
+    url: https://nvd.nist.gov/vuln/detail/CVE-2018-16492
+    severity: Critical
+    xxx_nounkeyedliteral: {}
+    xxx_unrecognized: []
+    xxx_sizecache: 0
+  - identifier: CVE-2018-3728
+    packagename: hoek
+    packageversion: 2.16.3
+    fix: None
+    url: https://nvd.nist.gov/vuln/detail/CVE-2018-3728
+    severity: High
+    xxx_nounkeyedliteral: {}
+    xxx_unrecognized: []
+    xxx_sizecache: 0
+  - identifier: CVE-2017-15010
+    packagename: tough-cookie
+    packageversion: 2.3.1
+    fix: None
+    url: https://nvd.nist.gov/vuln/detail/CVE-2017-15010
+    severity: High
+    xxx_nounkeyedliteral: {}
+    xxx_unrecognized: []
+    xxx_sizecache: 0
+  - identifier: VULNDB-202266
+    packagename: js-yaml
+    packageversion: 3.12.0
+    fix: 3.13.1
+    url: https://anchore.ci.ciscolabs.com:443/v1/query/vulnerabilities?id=VULNDB-202266
+    severity: Critical
+    xxx_nounkeyedliteral: {}
+    xxx_unrecognized: []
+    xxx_sizecache: 0
+  - identifier: VULNDB-191880
+    packagename: lodash
+    packageversion: 4.17.10
+    fix: 4.17.11
+    url: https://anchore.ci.ciscolabs.com:443/v1/query/vulnerabilities?id=VULNDB-191880
+    severity: High
+    xxx_nounkeyedliteral: {}
+    xxx_unrecognized: []
+    xxx_sizecache: 0
+  - identifier: VULNDB-156487
+    packagename: minimatch
+    packageversion: 3.0.3
+    fix: None
+    url: https://anchore.ci.ciscolabs.com:443/v1/query/vulnerabilities?id=VULNDB-156487
+    severity: High
+    xxx_nounkeyedliteral: {}
+    xxx_unrecognized: []
+    xxx_sizecache: 0
+  - identifier: VULNDB-156487
+    packagename: minimatch
+    packageversion: 3.0.3
+    fix: None
+    url: https://anchore.ci.ciscolabs.com:443/v1/query/vulnerabilities?id=VULNDB-156487
+    severity: High
+    xxx_nounkeyedliteral: {}
+    xxx_unrecognized: []
+    xxx_sizecache: 0
+  - identifier: VULNDB-156487
+    packagename: minimatch
+    packageversion: 3.0.3
+    fix: None
+    url: https://anchore.ci.ciscolabs.com:443/v1/query/vulnerabilities?id=VULNDB-156487
+    severity: High
+    xxx_nounkeyedliteral: {}
+    xxx_unrecognized: []
+    xxx_sizecache: 0
+  - identifier: VULNDB-156487
+    packagename: minimatch
+    packageversion: 3.0.3
+    fix: None
+    url: https://anchore.ci.ciscolabs.com:443/v1/query/vulnerabilities?id=VULNDB-156487
+    severity: High
+    xxx_nounkeyedliteral: {}
+    xxx_unrecognized: []
+    xxx_sizecache: 0
+  - identifier: VULNDB-156487
+    packagename: minimatch
+    packageversion: 3.0.3
+    fix: None
+    url: https://anchore.ci.ciscolabs.com:443/v1/query/vulnerabilities?id=VULNDB-156487
+    severity: High
+    xxx_nounkeyedliteral: {}
+    xxx_unrecognized: []
+    xxx_sizecache: 0
+  - identifier: VULNDB-219670
+    packagename: npm
+    packageversion: 3.10.10
+    fix: 6.13.3
+    url: https://anchore.ci.ciscolabs.com:443/v1/query/vulnerabilities?id=VULNDB-219670
+    severity: Critical
+    xxx_nounkeyedliteral: {}
+    xxx_unrecognized: []
+    xxx_sizecache: 0
+  - identifier: VULNDB-219605
+    packagename: npm
+    packageversion: 3.10.10
+    fix: 6.13.4
+    url: https://anchore.ci.ciscolabs.com:443/v1/query/vulnerabilities?id=VULNDB-219605
+    severity: High
+    xxx_nounkeyedliteral: {}
+    xxx_unrecognized: []
+    xxx_sizecache: 0
+  - identifier: VULNDB-219604
+    packagename: npm
+    packageversion: 3.10.10
+    fix: 6.13.3
+    url: https://anchore.ci.ciscolabs.com:443/v1/query/vulnerabilities?id=VULNDB-219604
+    severity: Critical
+    xxx_nounkeyedliteral: {}
+    xxx_unrecognized: []
+    xxx_sizecache: 0
+  xxx_nounkeyedliteral: {}
+  xxx_unrecognized: []
+  xxx_sizecache: 0
+- image: gcr.io/kubeflow-images-public/jupyter-web-app:9419d4d
+  badvulns: 10
+  vulns:
+  - identifier: CVE-2018-12207
+    packagename: linux-libc-dev
+    packageversion: 4.15.0-55.60
+    fix: 4.15.0-69.78
+    url: http://people.ubuntu.com/~ubuntu-security/cve/CVE-2018-12207
+    severity: High
+    xxx_nounkeyedliteral: {}
+    xxx_unrecognized: []
+    xxx_sizecache: 0
+  - identifier: CVE-2019-0155
+    packagename: linux-libc-dev
+    packageversion: 4.15.0-55.60
+    fix: 4.15.0-70.79
+    url: http://people.ubuntu.com/~ubuntu-security/cve/CVE-2019-0155
+    severity: High
+    xxx_nounkeyedliteral: {}
+    xxx_unrecognized: []
+    xxx_sizecache: 0
+  - identifier: CVE-2019-11135
+    packagename: linux-libc-dev
+    packageversion: 4.15.0-55.60
+    fix: 4.15.0-69.78
+    url: http://people.ubuntu.com/~ubuntu-security/cve/CVE-2019-11135
+    severity: High
+    xxx_nounkeyedliteral: {}
+    xxx_unrecognized: []
+    xxx_sizecache: 0
+  - identifier: CVE-2019-14835
+    packagename: linux-libc-dev
+    packageversion: 4.15.0-55.60
+    fix: 4.15.0-64.73
+    url: http://people.ubuntu.com/~ubuntu-security/cve/CVE-2019-14835
+    severity: High
+    xxx_nounkeyedliteral: {}
+    xxx_unrecognized: []
+    xxx_sizecache: 0
+  - identifier: SNYK-PYTHON-CRYPTOGRAPHY-42164
+    packagename: cryptography
+    packageversion: 2.1.4
+    fix: '! >=1.9.0 <2.3'
+    url: https://snyk.io/vuln/SNYK-PYTHON-CRYPTOGRAPHY-42164
+    severity: High
+    xxx_nounkeyedliteral: {}
+    xxx_unrecognized: []
+    xxx_sizecache: 0
+  - identifier: SNYK-PYTHON-PYCRYPTO-40249
+    packagename: pycrypto
+    packageversion: 2.6.1
+    fix: '! <=2.7a1'
+    url: https://snyk.io/vuln/SNYK-PYTHON-PYCRYPTO-40249
+    severity: High
+    xxx_nounkeyedliteral: {}
+    xxx_unrecognized: []
+    xxx_sizecache: 0
+  - identifier: SNYK-PYTHON-PYCRYPTO-42047
+    packagename: pycrypto
+    packageversion: 2.6.1
+    fix: None
+    url: https://snyk.io/vuln/SNYK-PYTHON-PYCRYPTO-42047
+    severity: High
+    xxx_nounkeyedliteral: {}
+    xxx_unrecognized: []
+    xxx_sizecache: 0
+  - identifier: SNYK-PYTHON-PYXDG-174562
+    packagename: pyxdg
+    packageversion: "0.25"
+    fix: '! <0.26'
+    url: https://snyk.io/vuln/SNYK-PYTHON-PYXDG-174562
+    severity: High
+    xxx_nounkeyedliteral: {}
+    xxx_unrecognized: []
+    xxx_sizecache: 0
+  - identifier: VULNDB-149336
+    packagename: pycrypto
+    packageversion: 2.6.1
+    fix: None
+    url: https://anchore.ci.ciscolabs.com:443/v1/query/vulnerabilities?id=VULNDB-149336
+    severity: High
+    xxx_nounkeyedliteral: {}
+    xxx_unrecognized: []
+    xxx_sizecache: 0
+  - identifier: VULNDB-204097
+    packagename: pyxdg
+    packageversion: "0.25"
+    fix: "0.26"
+    url: https://anchore.ci.ciscolabs.com:443/v1/query/vulnerabilities?id=VULNDB-204097
+    severity: High
+    xxx_nounkeyedliteral: {}
+    xxx_unrecognized: []
+    xxx_sizecache: 0
+  xxx_nounkeyedliteral: {}
+  xxx_unrecognized: []
+  xxx_sizecache: 0
+- image: gcr.io/kubeflow-images-public/katib/v1alpha3/katib-controller:v0.7.0
+  badvulns: 2
+  vulns:
+  - identifier: CVE-2019-14697
+    packagename: musl
+    packageversion: 1.1.18-r3
+    fix: 1.1.18-r4
+    url: http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-14697
+    severity: High
+    xxx_nounkeyedliteral: {}
+    xxx_unrecognized: []
+    xxx_sizecache: 0
+  - identifier: CVE-2019-14697
+    packagename: musl-utils
+    packageversion: 1.1.18-r3
+    fix: 1.1.18-r4
+    url: http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-14697
+    severity: High
+    xxx_nounkeyedliteral: {}
+    xxx_unrecognized: []
+    xxx_sizecache: 0
+  xxx_nounkeyedliteral: {}
+  xxx_unrecognized: []
+  xxx_sizecache: 0
+- image: gcr.io/kubeflow-images-public/katib/v1alpha3/katib-manager:v0.7.0
+  badvulns: 2
+  vulns:
+  - identifier: CVE-2019-14697
+    packagename: musl
+    packageversion: 1.1.18-r3
+    fix: 1.1.18-r4
+    url: http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-14697
+    severity: High
+    xxx_nounkeyedliteral: {}
+    xxx_unrecognized: []
+    xxx_sizecache: 0
+  - identifier: CVE-2019-14697
+    packagename: musl-utils
+    packageversion: 1.1.18-r3
+    fix: 1.1.18-r4
+    url: http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-14697
+    severity: High
+    xxx_nounkeyedliteral: {}
+    xxx_unrecognized: []
+    xxx_sizecache: 0
+  xxx_nounkeyedliteral: {}
+  xxx_unrecognized: []
+  xxx_sizecache: 0
+- image: gcr.io/kubeflow-images-public/katib/v1alpha3/katib-ui:v0.7.0
+  badvulns: 2
+  vulns:
+  - identifier: CVE-2019-14697
+    packagename: musl
+    packageversion: 1.1.18-r3
+    fix: 1.1.18-r4
+    url: http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-14697
+    severity: High
+    xxx_nounkeyedliteral: {}
+    xxx_unrecognized: []
+    xxx_sizecache: 0
+  - identifier: CVE-2019-14697
+    packagename: musl-utils
+    packageversion: 1.1.18-r3
+    fix: 1.1.18-r4
+    url: http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-14697
+    severity: High
+    xxx_nounkeyedliteral: {}
+    xxx_unrecognized: []
+    xxx_sizecache: 0
+  xxx_nounkeyedliteral: {}
+  xxx_unrecognized: []
+  xxx_sizecache: 0
+- image: gcr.io/kubebuilder/kube-rbac-proxy:v0.4.0
+  badvulns: 2
+  vulns:
+  - identifier: CVE-2019-14697
+    packagename: musl
+    packageversion: 1.1.19-r10
+    fix: 1.1.19-r11
+    url: http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-14697
+    severity: High
+    xxx_nounkeyedliteral: {}
+    xxx_unrecognized: []
+    xxx_sizecache: 0
+  - identifier: CVE-2019-14697
+    packagename: musl-utils
+    packageversion: 1.1.19-r10
+    fix: 1.1.19-r11
+    url: http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-14697
+    severity: High
+    xxx_nounkeyedliteral: {}
+    xxx_unrecognized: []
+    xxx_sizecache: 0
+  xxx_nounkeyedliteral: {}
+  xxx_unrecognized: []
+  xxx_sizecache: 0
+- image: gcr.io/kubeflow-images-public/metadata:v0.1.11
+  badvulns: 36
+  vulns:
+  - identifier: SNYK-JAVA-COMFASTERXMLJACKSONDATATYPE-173759
+    packagename: jackson-datatype-jsr310
+    packageversion: 2.9.5
+    fix: '! <2.9.8'
+    url: https://snyk.io/vuln/SNYK-JAVA-COMFASTERXMLJACKSONDATATYPE-173759
+    severity: High
+    xxx_nounkeyedliteral: {}
+    xxx_unrecognized: []
+    xxx_sizecache: 0
+  - identifier: SNYK-PYTHON-MERCURIAL-174511
+    packagename: mercurial
+    packageversion: "4.0"
+    fix: '! <4.9'
+    url: https://snyk.io/vuln/SNYK-PYTHON-MERCURIAL-174511
+    severity: High
+    xxx_nounkeyedliteral: {}
+    xxx_unrecognized: []
+    xxx_sizecache: 0
+  - identifier: SNYK-PYTHON-MERCURIAL-42088
+    packagename: mercurial
+    packageversion: "4.0"
+    fix: '! <4.5.2'
+    url: https://snyk.io/vuln/SNYK-PYTHON-MERCURIAL-42088
+    severity: High
+    xxx_nounkeyedliteral: {}
+    xxx_unrecognized: []
+    xxx_sizecache: 0
+  - identifier: SNYK-PYTHON-MERCURIAL-42106
+    packagename: mercurial
+    packageversion: "4.0"
+    fix: '! <4.1.3'
+    url: https://snyk.io/vuln/SNYK-PYTHON-MERCURIAL-42106
+    severity: High
+    xxx_nounkeyedliteral: {}
+    xxx_unrecognized: []
+    xxx_sizecache: 0
+  - identifier: SNYK-PYTHON-NUMPY-73513
+    packagename: numpy
+    packageversion: 1.17.3
+    fix: None
+    url: https://snyk.io/vuln/SNYK-PYTHON-NUMPY-73513
+    severity: High
+    xxx_nounkeyedliteral: {}
+    xxx_unrecognized: []
+    xxx_sizecache: 0
+  - identifier: CVE-2019-17531
+    packagename: jackson-databind
+    packageversion: 2.9.8
+    fix: None
+    url: https://nvd.nist.gov/vuln/detail/CVE-2019-17531
+    severity: High
+    xxx_nounkeyedliteral: {}
+    xxx_unrecognized: []
+    xxx_sizecache: 0
+  - identifier: CVE-2019-17267
+    packagename: jackson-databind
+    packageversion: 2.9.8
+    fix: None
+    url: https://nvd.nist.gov/vuln/detail/CVE-2019-17267
+    severity: High
+    xxx_nounkeyedliteral: {}
+    xxx_unrecognized: []
+    xxx_sizecache: 0
+  - identifier: CVE-2019-16942
+    packagename: jackson-databind
+    packageversion: 2.9.8
+    fix: None
+    url: https://nvd.nist.gov/vuln/detail/CVE-2019-16942
+    severity: High
+    xxx_nounkeyedliteral: {}
+    xxx_unrecognized: []
+    xxx_sizecache: 0
+  - identifier: CVE-2019-16335
+    packagename: jackson-databind
+    packageversion: 2.9.8
+    fix: None
+    url: https://nvd.nist.gov/vuln/detail/CVE-2019-16335
+    severity: High
+    xxx_nounkeyedliteral: {}
+    xxx_unrecognized: []
+    xxx_sizecache: 0
+  - identifier: CVE-2019-14540
+    packagename: jackson-databind
+    packageversion: 2.9.8
+    fix: None
+    url: https://nvd.nist.gov/vuln/detail/CVE-2019-14540
+    severity: High
+    xxx_nounkeyedliteral: {}
+    xxx_unrecognized: []
+    xxx_sizecache: 0
+  - identifier: CVE-2019-14379
+    packagename: jackson-databind
+    packageversion: 2.9.8
+    fix: None
+    url: https://nvd.nist.gov/vuln/detail/CVE-2019-14379
+    severity: Critical
+    xxx_nounkeyedliteral: {}
+    xxx_unrecognized: []
+    xxx_sizecache: 0
+  - identifier: CVE-2019-14439
+    packagename: jackson-databind
+    packageversion: 2.9.8
+    fix: None
+    url: https://nvd.nist.gov/vuln/detail/CVE-2019-14439
+    severity: High
+    xxx_nounkeyedliteral: {}
+    xxx_unrecognized: []
+    xxx_sizecache: 0
+  - identifier: CVE-2018-8088
+    packagename: slf4j-ext
+    packageversion: 1.7.12
+    fix: None
+    url: https://nvd.nist.gov/vuln/detail/CVE-2018-8088
+    severity: Critical
+    xxx_nounkeyedliteral: {}
+    xxx_unrecognized: []
+    xxx_sizecache: 0
+  - identifier: CVE-2017-1000116
+    packagename: mercurial
+    packageversion: "4.0"
+    fix: None
+    url: https://nvd.nist.gov/vuln/detail/CVE-2017-1000116
+    severity: Critical
+    xxx_nounkeyedliteral: {}
+    xxx_unrecognized: []
+    xxx_sizecache: 0
+  - identifier: CVE-2017-1000115
+    packagename: mercurial
+    packageversion: "4.0"
+    fix: None
+    url: https://nvd.nist.gov/vuln/detail/CVE-2017-1000115
+    severity: High
+    xxx_nounkeyedliteral: {}
+    xxx_unrecognized: []
+    xxx_sizecache: 0
+  - identifier: CVE-2019-9948
+    packagename: Python
+    packageversion: 2.7.13
+    fix: None
+    url: https://nvd.nist.gov/vuln/detail/CVE-2019-9948
+    severity: Critical
+    xxx_nounkeyedliteral: {}
+    xxx_unrecognized: []
+    xxx_sizecache: 0
+  - identifier: CVE-2018-14647
+    packagename: Python
+    packageversion: 2.7.13
+    fix: None
+    url: https://nvd.nist.gov/vuln/detail/CVE-2018-14647
+    severity: High
+    xxx_nounkeyedliteral: {}
+    xxx_unrecognized: []
+    xxx_sizecache: 0
+  - identifier: CVE-2018-1061
+    packagename: Python
+    packageversion: 2.7.13
+    fix: None
+    url: https://nvd.nist.gov/vuln/detail/CVE-2018-1061
+    severity: High
+    xxx_nounkeyedliteral: {}
+    xxx_unrecognized: []
+    xxx_sizecache: 0
+  - identifier: CVE-2018-1060
+    packagename: Python
+    packageversion: 2.7.13
+    fix: None
+    url: https://nvd.nist.gov/vuln/detail/CVE-2018-1060
+    severity: High
+    xxx_nounkeyedliteral: {}
+    xxx_unrecognized: []
+    xxx_sizecache: 0
+  - identifier: CVE-2017-1000158
+    packagename: Python
+    packageversion: 2.7.13
+    fix: None
+    url: https://nvd.nist.gov/vuln/detail/CVE-2017-1000158
+    severity: Critical
+    xxx_nounkeyedliteral: {}
+    xxx_unrecognized: []
+    xxx_sizecache: 0
+  - identifier: CVE-2015-5652
+    packagename: Python
+    packageversion: 2.7.13
+    fix: None
+    url: https://nvd.nist.gov/vuln/detail/CVE-2015-5652
+    severity: High
+    xxx_nounkeyedliteral: {}
+    xxx_unrecognized: []
+    xxx_sizecache: 0
+  - identifier: VULNDB-130424
+    packagename: commons_io
+    packageversion: "2.4"
+    fix: "2.5"
+    url: https://anchore.ci.ciscolabs.com:443/v1/query/vulnerabilities?id=VULNDB-130424
+    severity: High
+    xxx_nounkeyedliteral: {}
+    xxx_unrecognized: []
+    xxx_sizecache: 0
+  - identifier: VULNDB-217761
+    packagename: handlebars
+    packageversion: 4.1.2
+    fix: 4.5.3
+    url: https://anchore.ci.ciscolabs.com:443/v1/query/vulnerabilities?id=VULNDB-217761
+    severity: Critical
+    xxx_nounkeyedliteral: {}
+    xxx_unrecognized: []
+    xxx_sizecache: 0
+  - identifier: VULNDB-217761
+    packagename: handlebars
+    packageversion: 4.1.2
+    fix: 4.5.3
+    url: https://anchore.ci.ciscolabs.com:443/v1/query/vulnerabilities?id=VULNDB-217761
+    severity: Critical
+    xxx_nounkeyedliteral: {}
+    xxx_unrecognized: []
+    xxx_sizecache: 0
+  - identifier: VULNDB-214563
+    packagename: jackson-databind
+    packageversion: 2.9.8
+    fix: 2.9.10.1, 2.10.0
+    url: https://anchore.ci.ciscolabs.com:443/v1/query/vulnerabilities?id=VULNDB-214563
+    severity: High
+    xxx_nounkeyedliteral: {}
+    xxx_unrecognized: []
+    xxx_sizecache: 0
+  - identifier: VULNDB-204803
+    packagename: jackson-databind
+    packageversion: 2.9.8
+    fix: 2.9.9
+    url: https://anchore.ci.ciscolabs.com:443/v1/query/vulnerabilities?id=VULNDB-204803
+    severity: Critical
+    xxx_nounkeyedliteral: {}
+    xxx_unrecognized: []
+    xxx_sizecache: 0
+  - identifier: VULNDB-207059
+    packagename: jackson-databind
+    packageversion: 2.9.8
+    fix: 2.9.9.1
+    url: https://anchore.ci.ciscolabs.com:443/v1/query/vulnerabilities?id=VULNDB-207059
+    severity: Critical
+    xxx_nounkeyedliteral: {}
+    xxx_unrecognized: []
+    xxx_sizecache: 0
+  - identifier: VULNDB-137890
+    packagename: Python
+    packageversion: 2.7.13
+    fix: 3.5.1
+    url: https://anchore.ci.ciscolabs.com:443/v1/query/vulnerabilities?id=VULNDB-137890
+    severity: High
+    xxx_nounkeyedliteral: {}
+    xxx_unrecognized: []
+    xxx_sizecache: 0
+  - identifier: VULNDB-181184
+    packagename: Python
+    packageversion: 2.7.13
+    fix: None
+    url: https://anchore.ci.ciscolabs.com:443/v1/query/vulnerabilities?id=VULNDB-181184
+    severity: High
+    xxx_nounkeyedliteral: {}
+    xxx_unrecognized: []
+    xxx_sizecache: 0
+  - identifier: VULNDB-164176
+    packagename: Python
+    packageversion: 2.7.13
+    fix: 2.7.14
+    url: https://anchore.ci.ciscolabs.com:443/v1/query/vulnerabilities?id=VULNDB-164176
+    severity: High
+    xxx_nounkeyedliteral: {}
+    xxx_unrecognized: []
+    xxx_sizecache: 0
+  - identifier: VULNDB-164175
+    packagename: Python
+    packageversion: 2.7.13
+    fix: 2.7.14
+    url: https://anchore.ci.ciscolabs.com:443/v1/query/vulnerabilities?id=VULNDB-164175
+    severity: High
+    xxx_nounkeyedliteral: {}
+    xxx_unrecognized: []
+    xxx_sizecache: 0
+  - identifier: VULNDB-164174
+    packagename: Python
+    packageversion: 2.7.13
+    fix: 2.7.14
+    url: https://anchore.ci.ciscolabs.com:443/v1/query/vulnerabilities?id=VULNDB-164174
+    severity: High
+    xxx_nounkeyedliteral: {}
+    xxx_unrecognized: []
+    xxx_sizecache: 0
+  - identifier: VULNDB-164173
+    packagename: Python
+    packageversion: 2.7.13
+    fix: 2.7.14
+    url: https://anchore.ci.ciscolabs.com:443/v1/query/vulnerabilities?id=VULNDB-164173
+    severity: High
+    xxx_nounkeyedliteral: {}
+    xxx_unrecognized: []
+    xxx_sizecache: 0
+  - identifier: VULNDB-138680
+    packagename: Python
+    packageversion: 2.7.13
+    fix: 3.6.2rc2, 3.5.4rc1, 3.4.7rc1, 2.7.14
+    url: https://anchore.ci.ciscolabs.com:443/v1/query/vulnerabilities?id=VULNDB-138680
+    severity: High
+    xxx_nounkeyedliteral: {}
+    xxx_unrecognized: []
+    xxx_sizecache: 0
+  - identifier: VULNDB-122039
+    packagename: Python
+    packageversion: 2.7.13
+    fix: 3.6.0 alpha 2, 3.5.4rc1, 3.5.2, 3.4.7rc1, 3.4.5, 2.7.14
+    url: https://anchore.ci.ciscolabs.com:443/v1/query/vulnerabilities?id=VULNDB-122039
+    severity: High
+    xxx_nounkeyedliteral: {}
+    xxx_unrecognized: []
+    xxx_sizecache: 0
+  - identifier: VULNDB-80892
+    packagename: Python
+    packageversion: 2.7.13
+    fix: 3.6.2rc2, 3.5.4rc1, 3.4.7rc1, 2.7.14
+    url: https://anchore.ci.ciscolabs.com:443/v1/query/vulnerabilities?id=VULNDB-80892
+    severity: High
+    xxx_nounkeyedliteral: {}
+    xxx_unrecognized: []
+    xxx_sizecache: 0
+  xxx_nounkeyedliteral: {}
+  xxx_unrecognized: []
+  xxx_sizecache: 0
+- image: gcr.io/kubeflow-images-public/metadata-frontend:v0.1.8
+  badvulns: 13
+  vulns:
+  - identifier: CVE-2019-14697
+    packagename: musl
+    packageversion: 1.1.20-r4
+    fix: 1.1.20-r5
+    url: http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-14697
+    severity: High
+    xxx_nounkeyedliteral: {}
+    xxx_unrecognized: []
+    xxx_sizecache: 0
+  - identifier: CVE-2019-14697
+    packagename: musl-utils
+    packageversion: 1.1.20-r4
+    fix: 1.1.20-r5
+    url: http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-14697
+    severity: High
+    xxx_nounkeyedliteral: {}
+    xxx_unrecognized: []
+    xxx_sizecache: 0
+  - identifier: CVE-2019-5448
+    packagename: yarn
+    packageversion: 1.16.0
+    fix: None
+    url: https://nvd.nist.gov/vuln/detail/CVE-2019-5448
+    severity: High
+    xxx_nounkeyedliteral: {}
+    xxx_unrecognized: []
+    xxx_sizecache: 0
+  - identifier: CVE-2017-18589
+    packagename: cookie
+    packageversion: 0.4.0
+    fix: None
+    url: https://nvd.nist.gov/vuln/detail/CVE-2017-18589
+    severity: High
+    xxx_nounkeyedliteral: {}
+    xxx_unrecognized: []
+    xxx_sizecache: 0
+  - identifier: CVE-2019-10746
+    packagename: mixin-deep
+    packageversion: 1.3.1
+    fix: None
+    url: https://nvd.nist.gov/vuln/detail/CVE-2019-10746
+    severity: High
+    xxx_nounkeyedliteral: {}
+    xxx_unrecognized: []
+    xxx_sizecache: 0
+  - identifier: CVE-2019-10747
+    packagename: set-value
+    packageversion: 2.0.0
+    fix: None
+    url: https://nvd.nist.gov/vuln/detail/CVE-2019-10747
+    severity: High
+    xxx_nounkeyedliteral: {}
+    xxx_unrecognized: []
+    xxx_sizecache: 0
+  - identifier: CVE-2019-10747
+    packagename: set-value
+    packageversion: 0.4.3
+    fix: None
+    url: https://nvd.nist.gov/vuln/detail/CVE-2019-10747
+    severity: High
+    xxx_nounkeyedliteral: {}
+    xxx_unrecognized: []
+    xxx_sizecache: 0
+  - identifier: CVE-2019-13173
+    packagename: fstream
+    packageversion: 1.0.11
+    fix: None
+    url: https://nvd.nist.gov/vuln/detail/CVE-2019-13173
+    severity: High
+    xxx_nounkeyedliteral: {}
+    xxx_unrecognized: []
+    xxx_sizecache: 0
+  - identifier: VULNDB-207591
+    packagename: lodash
+    packageversion: 4.17.11
+    fix: 4.17.13, 4.17.12
+    url: https://anchore.ci.ciscolabs.com:443/v1/query/vulnerabilities?id=VULNDB-207591
+    severity: Critical
+    xxx_nounkeyedliteral: {}
+    xxx_unrecognized: []
+    xxx_sizecache: 0
+  - identifier: VULNDB-208996
+    packagename: lodash
+    packageversion: 4.17.11
+    fix: 4.17.12
+    url: https://anchore.ci.ciscolabs.com:443/v1/query/vulnerabilities?id=VULNDB-208996
+    severity: Critical
+    xxx_nounkeyedliteral: {}
+    xxx_unrecognized: []
+    xxx_sizecache: 0
+  - identifier: VULNDB-219670
+    packagename: npm
+    packageversion: 6.9.0
+    fix: 6.13.3
+    url: https://anchore.ci.ciscolabs.com:443/v1/query/vulnerabilities?id=VULNDB-219670
+    severity: Critical
+    xxx_nounkeyedliteral: {}
+    xxx_unrecognized: []
+    xxx_sizecache: 0
+  - identifier: VULNDB-219605
+    packagename: npm
+    packageversion: 6.9.0
+    fix: 6.13.4
+    url: https://anchore.ci.ciscolabs.com:443/v1/query/vulnerabilities?id=VULNDB-219605
+    severity: High
+    xxx_nounkeyedliteral: {}
+    xxx_unrecognized: []
+    xxx_sizecache: 0
+  - identifier: VULNDB-219604
+    packagename: npm
+    packageversion: 6.9.0
+    fix: 6.13.3
+    url: https://anchore.ci.ciscolabs.com:443/v1/query/vulnerabilities?id=VULNDB-219604
+    severity: Critical
+    xxx_nounkeyedliteral: {}
+    xxx_unrecognized: []
+    xxx_sizecache: 0
+  xxx_nounkeyedliteral: {}
+  xxx_unrecognized: []
+  xxx_sizecache: 0
+- image: minio/minio:RELEASE.2018-02-09T22-40-05Z
+  badvulns: 14
+  vulns:
+  - identifier: CVE-2018-0500
+    packagename: curl
+    packageversion: 7.58.0-r0
+    fix: 7.61.0-r0
+    url: http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2018-0500
+    severity: High
+    xxx_nounkeyedliteral: {}
+    xxx_unrecognized: []
+    xxx_sizecache: 0
+  - identifier: CVE-2018-1000120
+    packagename: curl
+    packageversion: 7.58.0-r0
+    fix: 7.59.0-r0
+    url: http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2018-1000120
+    severity: High
+    xxx_nounkeyedliteral: {}
+    xxx_unrecognized: []
+    xxx_sizecache: 0
+  - identifier: CVE-2018-1000300
+    packagename: curl
+    packageversion: 7.58.0-r0
+    fix: 7.60.0-r0
+    url: http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2018-1000300
+    severity: High
+    xxx_nounkeyedliteral: {}
+    xxx_unrecognized: []
+    xxx_sizecache: 0
+  - identifier: CVE-2018-14618
+    packagename: curl
+    packageversion: 7.58.0-r0
+    fix: 7.61.1-r0
+    url: http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2018-14618
+    severity: High
+    xxx_nounkeyedliteral: {}
+    xxx_unrecognized: []
+    xxx_sizecache: 0
+  - identifier: CVE-2018-16839
+    packagename: curl
+    packageversion: 7.58.0-r0
+    fix: 7.61.1-r1
+    url: http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2018-16839
+    severity: High
+    xxx_nounkeyedliteral: {}
+    xxx_unrecognized: []
+    xxx_sizecache: 0
+  - identifier: CVE-2018-16840
+    packagename: curl
+    packageversion: 7.58.0-r0
+    fix: 7.61.1-r1
+    url: http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2018-16840
+    severity: High
+    xxx_nounkeyedliteral: {}
+    xxx_unrecognized: []
+    xxx_sizecache: 0
+  - identifier: CVE-2019-3822
+    packagename: curl
+    packageversion: 7.58.0-r0
+    fix: 7.61.1-r2
+    url: http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-3822
+    severity: High
+    xxx_nounkeyedliteral: {}
+    xxx_unrecognized: []
+    xxx_sizecache: 0
+  - identifier: CVE-2018-0500
+    packagename: libcurl
+    packageversion: 7.58.0-r0
+    fix: 7.61.0-r0
+    url: http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2018-0500
+    severity: High
+    xxx_nounkeyedliteral: {}
+    xxx_unrecognized: []
+    xxx_sizecache: 0
+  - identifier: CVE-2018-1000120
+    packagename: libcurl
+    packageversion: 7.58.0-r0
+    fix: 7.59.0-r0
+    url: http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2018-1000120
+    severity: High
+    xxx_nounkeyedliteral: {}
+    xxx_unrecognized: []
+    xxx_sizecache: 0
+  - identifier: CVE-2018-1000300
+    packagename: libcurl
+    packageversion: 7.58.0-r0
+    fix: 7.60.0-r0
+    url: http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2018-1000300
+    severity: High
+    xxx_nounkeyedliteral: {}
+    xxx_unrecognized: []
+    xxx_sizecache: 0
+  - identifier: CVE-2018-14618
+    packagename: libcurl
+    packageversion: 7.58.0-r0
+    fix: 7.61.1-r0
+    url: http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2018-14618
+    severity: High
+    xxx_nounkeyedliteral: {}
+    xxx_unrecognized: []
+    xxx_sizecache: 0
+  - identifier: CVE-2018-16839
+    packagename: libcurl
+    packageversion: 7.58.0-r0
+    fix: 7.61.1-r1
+    url: http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2018-16839
+    severity: High
+    xxx_nounkeyedliteral: {}
+    xxx_unrecognized: []
+    xxx_sizecache: 0
+  - identifier: CVE-2018-16840
+    packagename: libcurl
+    packageversion: 7.58.0-r0
+    fix: 7.61.1-r1
+    url: http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2018-16840
+    severity: High
+    xxx_nounkeyedliteral: {}
+    xxx_unrecognized: []
+    xxx_sizecache: 0
+  - identifier: CVE-2019-3822
+    packagename: libcurl
+    packageversion: 7.58.0-r0
+    fix: 7.61.1-r2
+    url: http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-3822
+    severity: High
+    xxx_nounkeyedliteral: {}
+    xxx_unrecognized: []
+    xxx_sizecache: 0
+  xxx_nounkeyedliteral: {}
+  xxx_unrecognized: []
+  xxx_sizecache: 0
+- image: gcr.io/ml-pipeline/visualization-server:0.1.27
+  badvulns: 8
+  vulns:
+  - identifier: SNYK-PYTHON-MERCURIAL-174511
+    packagename: mercurial
+    packageversion: 4.8.2
+    fix: '! <4.9'
+    url: https://snyk.io/vuln/SNYK-PYTHON-MERCURIAL-174511
+    severity: High
+    xxx_nounkeyedliteral: {}
+    xxx_unrecognized: []
+    xxx_sizecache: 0
+  - identifier: SNYK-PYTHON-NUMPY-73513
+    packagename: numpy
+    packageversion: 1.17.0
+    fix: None
+    url: https://snyk.io/vuln/SNYK-PYTHON-NUMPY-73513
+    severity: High
+    xxx_nounkeyedliteral: {}
+    xxx_unrecognized: []
+    xxx_sizecache: 0
+  - identifier: CVE-2015-5652
+    packagename: Python
+    packageversion: 2.7.16
+    fix: None
+    url: https://nvd.nist.gov/vuln/detail/CVE-2015-5652
+    severity: High
+    xxx_nounkeyedliteral: {}
+    xxx_unrecognized: []
+    xxx_sizecache: 0
+  - identifier: VULNDB-212855
+    packagename: Python
+    packageversion: 2.7.16
+    fix: 3.6.10rc1, 3.8.0rc1, 2.7.17, 3.7.5rc1
+    url: https://anchore.ci.ciscolabs.com:443/v1/query/vulnerabilities?id=VULNDB-212855
+    severity: High
+    xxx_nounkeyedliteral: {}
+    xxx_unrecognized: []
+    xxx_sizecache: 0
+  - identifier: VULNDB-208865
+    packagename: Python
+    packageversion: 2.7.16
+    fix: 2.7.17, 3.7.3, 3.6.9, 3.5.7, 3.4.10
+    url: https://anchore.ci.ciscolabs.com:443/v1/query/vulnerabilities?id=VULNDB-208865
+    severity: High
+    xxx_nounkeyedliteral: {}
+    xxx_unrecognized: []
+    xxx_sizecache: 0
+  - identifier: VULNDB-137890
+    packagename: Python
+    packageversion: 2.7.16
+    fix: 3.5.1
+    url: https://anchore.ci.ciscolabs.com:443/v1/query/vulnerabilities?id=VULNDB-137890
+    severity: High
+    xxx_nounkeyedliteral: {}
+    xxx_unrecognized: []
+    xxx_sizecache: 0
+  - identifier: VULNDB-214834
+    packagename: Pillow
+    packageversion: 6.1.0
+    fix: 6.2.0
+    url: https://anchore.ci.ciscolabs.com:443/v1/query/vulnerabilities?id=VULNDB-214834
+    severity: High
+    xxx_nounkeyedliteral: {}
+    xxx_unrecognized: []
+    xxx_sizecache: 0
+  - identifier: VULNDB-219847
+    packagename: tensorflow
+    packageversion: 1.13.1
+    fix: 2.0, 1.15.0
+    url: https://anchore.ci.ciscolabs.com:443/v1/query/vulnerabilities?id=VULNDB-219847
+    severity: High
+    xxx_nounkeyedliteral: {}
+    xxx_unrecognized: []
+    xxx_sizecache: 0
+  xxx_nounkeyedliteral: {}
+  xxx_unrecognized: []
+  xxx_sizecache: 0
+- image: gcr.io/ml-pipeline/persistenceagent:0.1.31
+  badvulns: 2
+  vulns:
+  - identifier: CVE-2019-14697
+    packagename: musl
+    packageversion: 1.1.19-r10
+    fix: 1.1.19-r11
+    url: http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-14697
+    severity: High
+    xxx_nounkeyedliteral: {}
+    xxx_unrecognized: []
+    xxx_sizecache: 0
+  - identifier: CVE-2019-14697
+    packagename: musl-utils
+    packageversion: 1.1.19-r10
+    fix: 1.1.19-r11
+    url: http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-14697
+    severity: High
+    xxx_nounkeyedliteral: {}
+    xxx_unrecognized: []
+    xxx_sizecache: 0
+  xxx_nounkeyedliteral: {}
+  xxx_unrecognized: []
+  xxx_sizecache: 0
+- image: gcr.io/ml-pipeline/scheduledworkflow:0.1.31
+  badvulns: 2
+  vulns:
+  - identifier: CVE-2019-14697
+    packagename: musl
+    packageversion: 1.1.19-r10
+    fix: 1.1.19-r11
+    url: http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-14697
+    severity: High
+    xxx_nounkeyedliteral: {}
+    xxx_unrecognized: []
+    xxx_sizecache: 0
+  - identifier: CVE-2019-14697
+    packagename: musl-utils
+    packageversion: 1.1.19-r10
+    fix: 1.1.19-r11
+    url: http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-14697
+    severity: High
+    xxx_nounkeyedliteral: {}
+    xxx_unrecognized: []
+    xxx_sizecache: 0
+  xxx_nounkeyedliteral: {}
+  xxx_unrecognized: []
+  xxx_sizecache: 0
+- image: gcr.io/ml-pipeline/frontend:0.1.31
+  badvulns: 21
+  vulns:
+  - identifier: SNYK-JS-DEEPEXTEND-12120
+    packagename: deep-extend
+    packageversion: 0.4.2
+    fix: '! <0.5.1'
+    url: https://snyk.io/vuln/SNYK-JS-DEEPEXTEND-12120
+    severity: High
+    xxx_nounkeyedliteral: {}
+    xxx_unrecognized: []
+    xxx_sizecache: 0
+  - identifier: SNYK-JS-DEEPEXTEND-12120
+    packagename: deep-extend
+    packageversion: 0.4.2
+    fix: '! <0.5.1'
+    url: https://snyk.io/vuln/SNYK-JS-DEEPEXTEND-12120
+    severity: High
+    xxx_nounkeyedliteral: {}
+    xxx_unrecognized: []
+    xxx_sizecache: 0
+  - identifier: SNYK-JS-EXTEND-12179
+    packagename: extend
+    packageversion: 3.0.1
+    fix: '! <2.0.2'
+    url: https://snyk.io/vuln/SNYK-JS-EXTEND-12179
+    severity: High
+    xxx_nounkeyedliteral: {}
+    xxx_unrecognized: []
+    xxx_sizecache: 0
+  - identifier: SNYK-JS-HTTPSPROXYAGENT-12113
+    packagename: https-proxy-agent
+    packageversion: 2.1.0
+    fix: '! <2.2.0'
+    url: https://snyk.io/vuln/SNYK-JS-HTTPSPROXYAGENT-12113
+    severity: High
+    xxx_nounkeyedliteral: {}
+    xxx_unrecognized: []
+    xxx_sizecache: 0
+  - identifier: SNYK-JS-HTTPSPROXYAGENT-12113
+    packagename: https-proxy-agent
+    packageversion: 2.1.0
+    fix: '! <2.2.0'
+    url: https://snyk.io/vuln/SNYK-JS-HTTPSPROXYAGENT-12113
+    severity: High
+    xxx_nounkeyedliteral: {}
+    xxx_unrecognized: []
+    xxx_sizecache: 0
+  - identifier: SNYK-JS-LODASH-73638
+    packagename: lodash
+    packageversion: 3.10.1
+    fix: '! <4.17.11'
+    url: https://snyk.io/vuln/SNYK-JS-LODASH-73638
+    severity: High
+    xxx_nounkeyedliteral: {}
+    xxx_unrecognized: []
+    xxx_sizecache: 0
+  - identifier: SNYK-JS-SSHPK-12114
+    packagename: sshpk
+    packageversion: 1.13.1
+    fix: '! <1.14.1'
+    url: https://snyk.io/vuln/SNYK-JS-SSHPK-12114
+    severity: High
+    xxx_nounkeyedliteral: {}
+    xxx_unrecognized: []
+    xxx_sizecache: 0
+  - identifier: SNYK-JS-TAR-174125
+    packagename: tar
+    packageversion: 4.0.2
+    fix: '! >=3.0.0 <4.4.2'
+    url: https://snyk.io/vuln/SNYK-JS-TAR-174125
+    severity: High
+    xxx_nounkeyedliteral: {}
+    xxx_unrecognized: []
+    xxx_sizecache: 0
+  - identifier: CVE-2019-5448
+    packagename: yarn
+    packageversion: 1.3.2
+    fix: None
+    url: https://nvd.nist.gov/vuln/detail/CVE-2019-5448
+    severity: High
+    xxx_nounkeyedliteral: {}
+    xxx_unrecognized: []
+    xxx_sizecache: 0
+  - identifier: CVE-2017-18589
+    packagename: cookie
+    packageversion: 0.4.0
+    fix: None
+    url: https://nvd.nist.gov/vuln/detail/CVE-2017-18589
+    severity: High
+    xxx_nounkeyedliteral: {}
+    xxx_unrecognized: []
+    xxx_sizecache: 0
+  - identifier: CVE-2019-10744
+    packagename: lodash
+    packageversion: 3.10.1
+    fix: None
+    url: https://nvd.nist.gov/vuln/detail/CVE-2019-10744
+    severity: Critical
+    xxx_nounkeyedliteral: {}
+    xxx_unrecognized: []
+    xxx_sizecache: 0
+  - identifier: CVE-2018-16487
+    packagename: lodash
+    packageversion: 3.10.1
+    fix: None
+    url: https://nvd.nist.gov/vuln/detail/CVE-2018-16487
+    severity: Critical
+    xxx_nounkeyedliteral: {}
+    xxx_unrecognized: []
+    xxx_sizecache: 0
+  - identifier: CVE-2019-13173
+    packagename: fstream
+    packageversion: 1.0.11
+    fix: None
+    url: https://nvd.nist.gov/vuln/detail/CVE-2019-13173
+    severity: High
+    xxx_nounkeyedliteral: {}
+    xxx_unrecognized: []
+    xxx_sizecache: 0
+  - identifier: CVE-2018-3739
+    packagename: https-proxy-agent
+    packageversion: 2.1.0
+    fix: None
+    url: https://nvd.nist.gov/vuln/detail/CVE-2018-3739
+    severity: Critical
+    xxx_nounkeyedliteral: {}
+    xxx_unrecognized: []
+    xxx_sizecache: 0
+  - identifier: CVE-2018-3739
+    packagename: https-proxy-agent
+    packageversion: 2.1.0
+    fix: None
+    url: https://nvd.nist.gov/vuln/detail/CVE-2018-3739
+    severity: Critical
+    xxx_nounkeyedliteral: {}
+    xxx_unrecognized: []
+    xxx_sizecache: 0
+  - identifier: CVE-2018-16492
+    packagename: extend
+    packageversion: 3.0.1
+    fix: None
+    url: https://nvd.nist.gov/vuln/detail/CVE-2018-16492
+    severity: Critical
+    xxx_nounkeyedliteral: {}
+    xxx_unrecognized: []
+    xxx_sizecache: 0
+  - identifier: CVE-2018-3737
+    packagename: sshpk
+    packageversion: 1.13.1
+    fix: None
+    url: https://nvd.nist.gov/vuln/detail/CVE-2018-3737
+    severity: High
+    xxx_nounkeyedliteral: {}
+    xxx_unrecognized: []
+    xxx_sizecache: 0
+  - identifier: VULNDB-218918
+    packagename: lodash
+    packageversion: 4.17.15
+    fix: None
+    url: https://anchore.ci.ciscolabs.com:443/v1/query/vulnerabilities?id=VULNDB-218918
+    severity: High
+    xxx_nounkeyedliteral: {}
+    xxx_unrecognized: []
+    xxx_sizecache: 0
+  - identifier: VULNDB-219670
+    packagename: npm
+    packageversion: 5.6.0
+    fix: 6.13.3
+    url: https://anchore.ci.ciscolabs.com:443/v1/query/vulnerabilities?id=VULNDB-219670
+    severity: Critical
+    xxx_nounkeyedliteral: {}
+    xxx_unrecognized: []
+    xxx_sizecache: 0
+  - identifier: VULNDB-219605
+    packagename: npm
+    packageversion: 5.6.0
+    fix: 6.13.4
+    url: https://anchore.ci.ciscolabs.com:443/v1/query/vulnerabilities?id=VULNDB-219605
+    severity: High
+    xxx_nounkeyedliteral: {}
+    xxx_unrecognized: []
+    xxx_sizecache: 0
+  - identifier: VULNDB-219604
+    packagename: npm
+    packageversion: 5.6.0
+    fix: 6.13.3
+    url: https://anchore.ci.ciscolabs.com:443/v1/query/vulnerabilities?id=VULNDB-219604
+    severity: Critical
+    xxx_nounkeyedliteral: {}
+    xxx_unrecognized: []
+    xxx_sizecache: 0
+  xxx_nounkeyedliteral: {}
+  xxx_unrecognized: []
+  xxx_sizecache: 0
+- image: gcr.io/google_containers/spartakus-amd64:v1.1.0
+  badvulns: 5
+  vulns:
+  - identifier: CVE-2016-6301
+    packagename: busybox
+    packageversion: 1.24.2-r11
+    fix: 1.24.2-r12
+    url: http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-6301
+    severity: High
+    xxx_nounkeyedliteral: {}
+    xxx_unrecognized: []
+    xxx_sizecache: 0
+  - identifier: CVE-2016-8859
+    packagename: musl
+    packageversion: 1.1.14-r12
+    fix: 1.1.14-r13
+    url: http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-8859
+    severity: High
+    xxx_nounkeyedliteral: {}
+    xxx_unrecognized: []
+    xxx_sizecache: 0
+  - identifier: CVE-2016-8859
+    packagename: musl-utils
+    packageversion: 1.1.14-r12
+    fix: 1.1.14-r13
+    url: http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-8859
+    severity: High
+    xxx_nounkeyedliteral: {}
+    xxx_unrecognized: []
+    xxx_sizecache: 0
+  - identifier: CVE-2016-9841
+    packagename: zlib
+    packageversion: 1.2.8-r2
+    fix: 1.2.11-r0
+    url: http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-9841
+    severity: High
+    xxx_nounkeyedliteral: {}
+    xxx_unrecognized: []
+    xxx_sizecache: 0
+  - identifier: CVE-2016-9843
+    packagename: zlib
+    packageversion: 1.2.8-r2
+    fix: 1.2.11-r0
+    url: http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-9843
+    severity: High
+    xxx_nounkeyedliteral: {}
+    xxx_unrecognized: []
+    xxx_sizecache: 0
+  xxx_nounkeyedliteral: {}
+  xxx_unrecognized: []
+  xxx_sizecache: 0
+- image: tensorflow/tensorflow:1.8.0
+  badvulns: 77
+  vulns:
+  - identifier: CVE-2019-3462
+    packagename: apt
+    packageversion: 1.2.26
+    fix: 1.2.29ubuntu0.1
+    url: http://people.ubuntu.com/~ubuntu-security/cve/CVE-2019-3462
+    severity: High
+    xxx_nounkeyedliteral: {}
+    xxx_unrecognized: []
+    xxx_sizecache: 0
+  - identifier: CVE-2019-3462
+    packagename: libapt-inst2.0
+    packageversion: 1.2.26
+    fix: 1.2.29ubuntu0.1
+    url: http://people.ubuntu.com/~ubuntu-security/cve/CVE-2019-3462
+    severity: High
+    xxx_nounkeyedliteral: {}
+    xxx_unrecognized: []
+    xxx_sizecache: 0
+  - identifier: CVE-2019-3462
+    packagename: libapt-pkg5.0
+    packageversion: 1.2.26
+    fix: 1.2.29ubuntu0.1
+    url: http://people.ubuntu.com/~ubuntu-security/cve/CVE-2019-3462
+    severity: High
+    xxx_nounkeyedliteral: {}
+    xxx_unrecognized: []
+    xxx_sizecache: 0
+  - identifier: CVE-2018-16864
+    packagename: libsystemd0
+    packageversion: 229-4ubuntu21.2
+    fix: 229-4ubuntu21.15
+    url: http://people.ubuntu.com/~ubuntu-security/cve/CVE-2018-16864
+    severity: High
+    xxx_nounkeyedliteral: {}
+    xxx_unrecognized: []
+    xxx_sizecache: 0
+  - identifier: CVE-2018-16865
+    packagename: libsystemd0
+    packageversion: 229-4ubuntu21.2
+    fix: 229-4ubuntu21.15
+    url: http://people.ubuntu.com/~ubuntu-security/cve/CVE-2018-16865
+    severity: High
+    xxx_nounkeyedliteral: {}
+    xxx_unrecognized: []
+    xxx_sizecache: 0
+  - identifier: CVE-2018-16864
+    packagename: libudev1
+    packageversion: 229-4ubuntu21.2
+    fix: 229-4ubuntu21.15
+    url: http://people.ubuntu.com/~ubuntu-security/cve/CVE-2018-16864
+    severity: High
+    xxx_nounkeyedliteral: {}
+    xxx_unrecognized: []
+    xxx_sizecache: 0
+  - identifier: CVE-2018-16865
+    packagename: libudev1
+    packageversion: 229-4ubuntu21.2
+    fix: 229-4ubuntu21.15
+    url: http://people.ubuntu.com/~ubuntu-security/cve/CVE-2018-16865
+    severity: High
+    xxx_nounkeyedliteral: {}
+    xxx_unrecognized: []
+    xxx_sizecache: 0
+  - identifier: CVE-2019-13132
+    packagename: libzmq3-dev
+    packageversion: 4.1.4-7
+    fix: 4.1.4-7ubuntu0.1
+    url: http://people.ubuntu.com/~ubuntu-security/cve/CVE-2019-13132
+    severity: High
+    xxx_nounkeyedliteral: {}
+    xxx_unrecognized: []
+    xxx_sizecache: 0
+  - identifier: CVE-2019-13132
+    packagename: libzmq5
+    packageversion: 4.1.4-7
+    fix: 4.1.4-7ubuntu0.1
+    url: http://people.ubuntu.com/~ubuntu-security/cve/CVE-2019-13132
+    severity: High
+    xxx_nounkeyedliteral: {}
+    xxx_unrecognized: []
+    xxx_sizecache: 0
+  - identifier: CVE-2018-1087
+    packagename: linux-libc-dev
+    packageversion: 4.4.0-122.146
+    fix: 4.4.0-124.148
+    url: http://people.ubuntu.com/~ubuntu-security/cve/CVE-2018-1087
+    severity: High
+    xxx_nounkeyedliteral: {}
+    xxx_unrecognized: []
+    xxx_sizecache: 0
+  - identifier: CVE-2018-12126
+    packagename: linux-libc-dev
+    packageversion: 4.4.0-122.146
+    fix: 4.4.0-148.174
+    url: http://people.ubuntu.com/~ubuntu-security/cve/CVE-2018-12126
+    severity: High
+    xxx_nounkeyedliteral: {}
+    xxx_unrecognized: []
+    xxx_sizecache: 0
+  - identifier: CVE-2018-12127
+    packagename: linux-libc-dev
+    packageversion: 4.4.0-122.146
+    fix: 4.4.0-148.174
+    url: http://people.ubuntu.com/~ubuntu-security/cve/CVE-2018-12127
+    severity: High
+    xxx_nounkeyedliteral: {}
+    xxx_unrecognized: []
+    xxx_sizecache: 0
+  - identifier: CVE-2018-12130
+    packagename: linux-libc-dev
+    packageversion: 4.4.0-122.146
+    fix: 4.4.0-148.174
+    url: http://people.ubuntu.com/~ubuntu-security/cve/CVE-2018-12130
+    severity: High
+    xxx_nounkeyedliteral: {}
+    xxx_unrecognized: []
+    xxx_sizecache: 0
+  - identifier: CVE-2018-12207
+    packagename: linux-libc-dev
+    packageversion: 4.4.0-122.146
+    fix: 4.4.0-168.197
+    url: http://people.ubuntu.com/~ubuntu-security/cve/CVE-2018-12207
+    severity: High
+    xxx_nounkeyedliteral: {}
+    xxx_unrecognized: []
+    xxx_sizecache: 0
+  - identifier: CVE-2018-15572
+    packagename: linux-libc-dev
+    packageversion: 4.4.0-122.146
+    fix: 4.4.0-137.163
+    url: http://people.ubuntu.com/~ubuntu-security/cve/CVE-2018-15572
+    severity: High
+    xxx_nounkeyedliteral: {}
+    xxx_unrecognized: []
+    xxx_sizecache: 0
+  - identifier: CVE-2018-15594
+    packagename: linux-libc-dev
+    packageversion: 4.4.0-122.146
+    fix: 4.4.0-137.163
+    url: http://people.ubuntu.com/~ubuntu-security/cve/CVE-2018-15594
+    severity: High
+    xxx_nounkeyedliteral: {}
+    xxx_unrecognized: []
+    xxx_sizecache: 0
+  - identifier: CVE-2018-17182
+    packagename: linux-libc-dev
+    packageversion: 4.4.0-122.146
+    fix: 4.4.0-137.163
+    url: http://people.ubuntu.com/~ubuntu-security/cve/CVE-2018-17182
+    severity: High
+    xxx_nounkeyedliteral: {}
+    xxx_unrecognized: []
+    xxx_sizecache: 0
+  - identifier: CVE-2018-3620
+    packagename: linux-libc-dev
+    packageversion: 4.4.0-122.146
+    fix: 4.4.0-133.159
+    url: http://people.ubuntu.com/~ubuntu-security/cve/CVE-2018-3620
+    severity: High
+    xxx_nounkeyedliteral: {}
+    xxx_unrecognized: []
+    xxx_sizecache: 0
+  - identifier: CVE-2018-3646
+    packagename: linux-libc-dev
+    packageversion: 4.4.0-122.146
+    fix: 4.4.0-133.159
+    url: http://people.ubuntu.com/~ubuntu-security/cve/CVE-2018-3646
+    severity: High
+    xxx_nounkeyedliteral: {}
+    xxx_unrecognized: []
+    xxx_sizecache: 0
+  - identifier: CVE-2018-5390
+    packagename: linux-libc-dev
+    packageversion: 4.4.0-122.146
+    fix: 4.4.0-133.159
+    url: http://people.ubuntu.com/~ubuntu-security/cve/CVE-2018-5390
+    severity: High
+    xxx_nounkeyedliteral: {}
+    xxx_unrecognized: []
+    xxx_sizecache: 0
+  - identifier: CVE-2018-5391
+    packagename: linux-libc-dev
+    packageversion: 4.4.0-122.146
+    fix: 4.4.0-133.159
+    url: http://people.ubuntu.com/~ubuntu-security/cve/CVE-2018-5391
+    severity: High
+    xxx_nounkeyedliteral: {}
+    xxx_unrecognized: []
+    xxx_sizecache: 0
+  - identifier: CVE-2018-8897
+    packagename: linux-libc-dev
+    packageversion: 4.4.0-122.146
+    fix: 4.4.0-124.148
+    url: http://people.ubuntu.com/~ubuntu-security/cve/CVE-2018-8897
+    severity: High
+    xxx_nounkeyedliteral: {}
+    xxx_unrecognized: []
+    xxx_sizecache: 0
+  - identifier: CVE-2019-0155
+    packagename: linux-libc-dev
+    packageversion: 4.4.0-122.146
+    fix: 4.4.0-169.198
+    url: http://people.ubuntu.com/~ubuntu-security/cve/CVE-2019-0155
+    severity: High
+    xxx_nounkeyedliteral: {}
+    xxx_unrecognized: []
+    xxx_sizecache: 0
+  - identifier: CVE-2019-11135
+    packagename: linux-libc-dev
+    packageversion: 4.4.0-122.146
+    fix: 4.4.0-168.197
+    url: http://people.ubuntu.com/~ubuntu-security/cve/CVE-2019-11135
+    severity: High
+    xxx_nounkeyedliteral: {}
+    xxx_unrecognized: []
+    xxx_sizecache: 0
+  - identifier: CVE-2019-11477
+    packagename: linux-libc-dev
+    packageversion: 4.4.0-122.146
+    fix: 4.4.0-151.178
+    url: http://people.ubuntu.com/~ubuntu-security/cve/CVE-2019-11477
+    severity: High
+    xxx_nounkeyedliteral: {}
+    xxx_unrecognized: []
+    xxx_sizecache: 0
+  - identifier: CVE-2019-11478
+    packagename: linux-libc-dev
+    packageversion: 4.4.0-122.146
+    fix: 4.4.0-151.178
+    url: http://people.ubuntu.com/~ubuntu-security/cve/CVE-2019-11478
+    severity: High
+    xxx_nounkeyedliteral: {}
+    xxx_unrecognized: []
+    xxx_sizecache: 0
+  - identifier: CVE-2019-14835
+    packagename: linux-libc-dev
+    packageversion: 4.4.0-122.146
+    fix: 4.4.0-164.192
+    url: http://people.ubuntu.com/~ubuntu-security/cve/CVE-2019-14835
+    severity: High
+    xxx_nounkeyedliteral: {}
+    xxx_unrecognized: []
+    xxx_sizecache: 0
+  - identifier: CVE-2018-16864
+    packagename: systemd
+    packageversion: 229-4ubuntu21.2
+    fix: 229-4ubuntu21.15
+    url: http://people.ubuntu.com/~ubuntu-security/cve/CVE-2018-16864
+    severity: High
+    xxx_nounkeyedliteral: {}
+    xxx_unrecognized: []
+    xxx_sizecache: 0
+  - identifier: CVE-2018-16865
+    packagename: systemd
+    packageversion: 229-4ubuntu21.2
+    fix: 229-4ubuntu21.15
+    url: http://people.ubuntu.com/~ubuntu-security/cve/CVE-2018-16865
+    severity: High
+    xxx_nounkeyedliteral: {}
+    xxx_unrecognized: []
+    xxx_sizecache: 0
+  - identifier: CVE-2018-16864
+    packagename: systemd-sysv
+    packageversion: 229-4ubuntu21.2
+    fix: 229-4ubuntu21.15
+    url: http://people.ubuntu.com/~ubuntu-security/cve/CVE-2018-16864
+    severity: High
+    xxx_nounkeyedliteral: {}
+    xxx_unrecognized: []
+    xxx_sizecache: 0
+  - identifier: CVE-2018-16865
+    packagename: systemd-sysv
+    packageversion: 229-4ubuntu21.2
+    fix: 229-4ubuntu21.15
+    url: http://people.ubuntu.com/~ubuntu-security/cve/CVE-2018-16865
+    severity: High
+    xxx_nounkeyedliteral: {}
+    xxx_unrecognized: []
+    xxx_sizecache: 0
+  - identifier: SNYK-PYTHON-NUMPY-73513
+    packagename: numpy
+    packageversion: 1.14.2
+    fix: None
+    url: https://snyk.io/vuln/SNYK-PYTHON-NUMPY-73513
+    severity: High
+    xxx_nounkeyedliteral: {}
+    xxx_unrecognized: []
+    xxx_sizecache: 0
+  - identifier: SNYK-PYTHON-TORNADO-40792
+    packagename: tornado
+    packageversion: 5.0.2
+    fix: '! <5.1.0'
+    url: https://snyk.io/vuln/SNYK-PYTHON-TORNADO-40792
+    severity: High
+    xxx_nounkeyedliteral: {}
+    xxx_unrecognized: []
+    xxx_sizecache: 0
+  - identifier: CVE-2017-17522
+    packagename: Python
+    packageversion: 2.7.12
+    fix: None
+    url: https://nvd.nist.gov/vuln/detail/CVE-2017-17522
+    severity: High
+    xxx_nounkeyedliteral: {}
+    xxx_unrecognized: []
+    xxx_sizecache: 0
+  - identifier: CVE-2017-1000158
+    packagename: Python
+    packageversion: 2.7.12
+    fix: None
+    url: https://nvd.nist.gov/vuln/detail/CVE-2017-1000158
+    severity: Critical
+    xxx_nounkeyedliteral: {}
+    xxx_unrecognized: []
+    xxx_sizecache: 0
+  - identifier: CVE-2015-5652
+    packagename: Python
+    packageversion: 2.7.12
+    fix: None
+    url: https://nvd.nist.gov/vuln/detail/CVE-2015-5652
+    severity: High
+    xxx_nounkeyedliteral: {}
+    xxx_unrecognized: []
+    xxx_sizecache: 0
+  - identifier: CVE-2019-6446
+    packagename: numpy
+    packageversion: 1.14.2
+    fix: None
+    url: https://nvd.nist.gov/vuln/detail/CVE-2019-6446
+    severity: Critical
+    xxx_nounkeyedliteral: {}
+    xxx_unrecognized: []
+    xxx_sizecache: 0
+  - identifier: VULNDB-137890
+    packagename: Python
+    packageversion: 2.7.12
+    fix: 3.5.1
+    url: https://anchore.ci.ciscolabs.com:443/v1/query/vulnerabilities?id=VULNDB-137890
+    severity: High
+    xxx_nounkeyedliteral: {}
+    xxx_unrecognized: []
+    xxx_sizecache: 0
+  - identifier: VULNDB-181184
+    packagename: Python
+    packageversion: 2.7.12
+    fix: None
+    url: https://anchore.ci.ciscolabs.com:443/v1/query/vulnerabilities?id=VULNDB-181184
+    severity: High
+    xxx_nounkeyedliteral: {}
+    xxx_unrecognized: []
+    xxx_sizecache: 0
+  - identifier: VULNDB-149085
+    packagename: Python
+    packageversion: 2.7.12
+    fix: 3.5.3rc1, 2.7.13
+    url: https://anchore.ci.ciscolabs.com:443/v1/query/vulnerabilities?id=VULNDB-149085
+    severity: High
+    xxx_nounkeyedliteral: {}
+    xxx_unrecognized: []
+    xxx_sizecache: 0
+  - identifier: VULNDB-149084
+    packagename: Python
+    packageversion: 2.7.12
+    fix: 3.5.3rc1, 2.7.13
+    url: https://anchore.ci.ciscolabs.com:443/v1/query/vulnerabilities?id=VULNDB-149084
+    severity: High
+    xxx_nounkeyedliteral: {}
+    xxx_unrecognized: []
+    xxx_sizecache: 0
+  - identifier: VULNDB-149083
+    packagename: Python
+    packageversion: 2.7.12
+    fix: 3.5.3rc1, 2.7.13
+    url: https://anchore.ci.ciscolabs.com:443/v1/query/vulnerabilities?id=VULNDB-149083
+    severity: High
+    xxx_nounkeyedliteral: {}
+    xxx_unrecognized: []
+    xxx_sizecache: 0
+  - identifier: VULNDB-149082
+    packagename: Python
+    packageversion: 2.7.12
+    fix: 3.5.3rc1, 2.7.13
+    url: https://anchore.ci.ciscolabs.com:443/v1/query/vulnerabilities?id=VULNDB-149082
+    severity: High
+    xxx_nounkeyedliteral: {}
+    xxx_unrecognized: []
+    xxx_sizecache: 0
+  - identifier: VULNDB-149081
+    packagename: Python
+    packageversion: 2.7.12
+    fix: 3.5.3rc1, 2.7.13
+    url: https://anchore.ci.ciscolabs.com:443/v1/query/vulnerabilities?id=VULNDB-149081
+    severity: High
+    xxx_nounkeyedliteral: {}
+    xxx_unrecognized: []
+    xxx_sizecache: 0
+  - identifier: VULNDB-149080
+    packagename: Python
+    packageversion: 2.7.12
+    fix: 3.5.3rc1, 2.7.13
+    url: https://anchore.ci.ciscolabs.com:443/v1/query/vulnerabilities?id=VULNDB-149080
+    severity: High
+    xxx_nounkeyedliteral: {}
+    xxx_unrecognized: []
+    xxx_sizecache: 0
+  - identifier: VULNDB-149079
+    packagename: Python
+    packageversion: 2.7.12
+    fix: 3.5.3rc1, 2.7.13
+    url: https://anchore.ci.ciscolabs.com:443/v1/query/vulnerabilities?id=VULNDB-149079
+    severity: High
+    xxx_nounkeyedliteral: {}
+    xxx_unrecognized: []
+    xxx_sizecache: 0
+  - identifier: VULNDB-149078
+    packagename: Python
+    packageversion: 2.7.12
+    fix: 3.5.3rc1, 2.7.13
+    url: https://anchore.ci.ciscolabs.com:443/v1/query/vulnerabilities?id=VULNDB-149078
+    severity: High
+    xxx_nounkeyedliteral: {}
+    xxx_unrecognized: []
+    xxx_sizecache: 0
+  - identifier: VULNDB-149077
+    packagename: Python
+    packageversion: 2.7.12
+    fix: 3.5.3rc1, 2.7.13
+    url: https://anchore.ci.ciscolabs.com:443/v1/query/vulnerabilities?id=VULNDB-149077
+    severity: High
+    xxx_nounkeyedliteral: {}
+    xxx_unrecognized: []
+    xxx_sizecache: 0
+  - identifier: VULNDB-149076
+    packagename: Python
+    packageversion: 2.7.12
+    fix: 2.7.13
+    url: https://anchore.ci.ciscolabs.com:443/v1/query/vulnerabilities?id=VULNDB-149076
+    severity: High
+    xxx_nounkeyedliteral: {}
+    xxx_unrecognized: []
+    xxx_sizecache: 0
+  - identifier: VULNDB-149075
+    packagename: Python
+    packageversion: 2.7.12
+    fix: 2.7.13
+    url: https://anchore.ci.ciscolabs.com:443/v1/query/vulnerabilities?id=VULNDB-149075
+    severity: High
+    xxx_nounkeyedliteral: {}
+    xxx_unrecognized: []
+    xxx_sizecache: 0
+  - identifier: VULNDB-149074
+    packagename: Python
+    packageversion: 2.7.12
+    fix: 2.7.13
+    url: https://anchore.ci.ciscolabs.com:443/v1/query/vulnerabilities?id=VULNDB-149074
+    severity: High
+    xxx_nounkeyedliteral: {}
+    xxx_unrecognized: []
+    xxx_sizecache: 0
+  - identifier: VULNDB-149073
+    packagename: Python
+    packageversion: 2.7.12
+    fix: 2.7.13
+    url: https://anchore.ci.ciscolabs.com:443/v1/query/vulnerabilities?id=VULNDB-149073
+    severity: High
+    xxx_nounkeyedliteral: {}
+    xxx_unrecognized: []
+    xxx_sizecache: 0
+  - identifier: VULNDB-149032
+    packagename: Python
+    packageversion: 2.7.12
+    fix: 2.7.13
+    url: https://anchore.ci.ciscolabs.com:443/v1/query/vulnerabilities?id=VULNDB-149032
+    severity: High
+    xxx_nounkeyedliteral: {}
+    xxx_unrecognized: []
+    xxx_sizecache: 0
+  - identifier: VULNDB-146484
+    packagename: Python
+    packageversion: 2.7.12
+    fix: 2.7.13
+    url: https://anchore.ci.ciscolabs.com:443/v1/query/vulnerabilities?id=VULNDB-146484
+    severity: High
+    xxx_nounkeyedliteral: {}
+    xxx_unrecognized: []
+    xxx_sizecache: 0
+  - identifier: VULNDB-145305
+    packagename: Python
+    packageversion: 2.7.12
+    fix: None
+    url: https://anchore.ci.ciscolabs.com:443/v1/query/vulnerabilities?id=VULNDB-145305
+    severity: High
+    xxx_nounkeyedliteral: {}
+    xxx_unrecognized: []
+    xxx_sizecache: 0
+  - identifier: VULNDB-143030
+    packagename: Python
+    packageversion: 2.7.12
+    fix: 2.7.13
+    url: https://anchore.ci.ciscolabs.com:443/v1/query/vulnerabilities?id=VULNDB-143030
+    severity: High
+    xxx_nounkeyedliteral: {}
+    xxx_unrecognized: []
+    xxx_sizecache: 0
+  - identifier: VULNDB-143023
+    packagename: Python
+    packageversion: 2.7.12
+    fix: 3.5.3rc1, 2.7.13
+    url: https://anchore.ci.ciscolabs.com:443/v1/query/vulnerabilities?id=VULNDB-143023
+    severity: High
+    xxx_nounkeyedliteral: {}
+    xxx_unrecognized: []
+    xxx_sizecache: 0
+  - identifier: VULNDB-143007
+    packagename: Python
+    packageversion: 2.7.12
+    fix: 3.5.3rc1, 2.7.13
+    url: https://anchore.ci.ciscolabs.com:443/v1/query/vulnerabilities?id=VULNDB-143007
+    severity: High
+    xxx_nounkeyedliteral: {}
+    xxx_unrecognized: []
+    xxx_sizecache: 0
+  - identifier: VULNDB-140659
+    packagename: Python
+    packageversion: 2.7.12
+    fix: 3.5.2rc1, 2.7.13
+    url: https://anchore.ci.ciscolabs.com:443/v1/query/vulnerabilities?id=VULNDB-140659
+    severity: High
+    xxx_nounkeyedliteral: {}
+    xxx_unrecognized: []
+    xxx_sizecache: 0
+  - identifier: VULNDB-131125
+    packagename: Python
+    packageversion: 2.7.12
+    fix: 3.5, 3.5.3rc1, 2.7.13
+    url: https://anchore.ci.ciscolabs.com:443/v1/query/vulnerabilities?id=VULNDB-131125
+    severity: High
+    xxx_nounkeyedliteral: {}
+    xxx_unrecognized: []
+    xxx_sizecache: 0
+  - identifier: VULNDB-119228
+    packagename: Python
+    packageversion: 2.7.12
+    fix: 3.5.1rc1, 3.4.3, 2.7.13
+    url: https://anchore.ci.ciscolabs.com:443/v1/query/vulnerabilities?id=VULNDB-119228
+    severity: High
+    xxx_nounkeyedliteral: {}
+    xxx_unrecognized: []
+    xxx_sizecache: 0
+  - identifier: VULNDB-149049
+    packagename: pycurl
+    packageversion: 7.43.0
+    fix: None
+    url: https://anchore.ci.ciscolabs.com:443/v1/query/vulnerabilities?id=VULNDB-149049
+    severity: High
+    xxx_nounkeyedliteral: {}
+    xxx_unrecognized: []
+    xxx_sizecache: 0
+  - identifier: VULNDB-149048
+    packagename: pycurl
+    packageversion: 7.43.0
+    fix: None
+    url: https://anchore.ci.ciscolabs.com:443/v1/query/vulnerabilities?id=VULNDB-149048
+    severity: High
+    xxx_nounkeyedliteral: {}
+    xxx_unrecognized: []
+    xxx_sizecache: 0
+  - identifier: VULNDB-146575
+    packagename: pycurl
+    packageversion: 7.43.0
+    fix: None
+    url: https://anchore.ci.ciscolabs.com:443/v1/query/vulnerabilities?id=VULNDB-146575
+    severity: High
+    xxx_nounkeyedliteral: {}
+    xxx_unrecognized: []
+    xxx_sizecache: 0
+  - identifier: VULNDB-146574
+    packagename: pycurl
+    packageversion: 7.43.0
+    fix: None
+    url: https://anchore.ci.ciscolabs.com:443/v1/query/vulnerabilities?id=VULNDB-146574
+    severity: High
+    xxx_nounkeyedliteral: {}
+    xxx_unrecognized: []
+    xxx_sizecache: 0
+  - identifier: VULNDB-146572
+    packagename: pycurl
+    packageversion: 7.43.0
+    fix: None
+    url: https://anchore.ci.ciscolabs.com:443/v1/query/vulnerabilities?id=VULNDB-146572
+    severity: High
+    xxx_nounkeyedliteral: {}
+    xxx_unrecognized: []
+    xxx_sizecache: 0
+  - identifier: VULNDB-146569
+    packagename: pycurl
+    packageversion: 7.43.0
+    fix: None
+    url: https://anchore.ci.ciscolabs.com:443/v1/query/vulnerabilities?id=VULNDB-146569
+    severity: High
+    xxx_nounkeyedliteral: {}
+    xxx_unrecognized: []
+    xxx_sizecache: 0
+  - identifier: VULNDB-146568
+    packagename: pycurl
+    packageversion: 7.43.0
+    fix: None
+    url: https://anchore.ci.ciscolabs.com:443/v1/query/vulnerabilities?id=VULNDB-146568
+    severity: High
+    xxx_nounkeyedliteral: {}
+    xxx_unrecognized: []
+    xxx_sizecache: 0
+  - identifier: VULNDB-146567
+    packagename: pycurl
+    packageversion: 7.43.0
+    fix: None
+    url: https://anchore.ci.ciscolabs.com:443/v1/query/vulnerabilities?id=VULNDB-146567
+    severity: High
+    xxx_nounkeyedliteral: {}
+    xxx_unrecognized: []
+    xxx_sizecache: 0
+  - identifier: VULNDB-144213
+    packagename: pycurl
+    packageversion: 7.43.0
+    fix: None
+    url: https://anchore.ci.ciscolabs.com:443/v1/query/vulnerabilities?id=VULNDB-144213
+    severity: High
+    xxx_nounkeyedliteral: {}
+    xxx_unrecognized: []
+    xxx_sizecache: 0
+  - identifier: VULNDB-142494
+    packagename: pycurl
+    packageversion: 7.43.0
+    fix: None
+    url: https://anchore.ci.ciscolabs.com:443/v1/query/vulnerabilities?id=VULNDB-142494
+    severity: High
+    xxx_nounkeyedliteral: {}
+    xxx_unrecognized: []
+    xxx_sizecache: 0
+  - identifier: VULNDB-139172
+    packagename: pycurl
+    packageversion: 7.43.0
+    fix: None
+    url: https://anchore.ci.ciscolabs.com:443/v1/query/vulnerabilities?id=VULNDB-139172
+    severity: High
+    xxx_nounkeyedliteral: {}
+    xxx_unrecognized: []
+    xxx_sizecache: 0
+  - identifier: VULNDB-133666
+    packagename: pycurl
+    packageversion: 7.43.0
+    fix: None
+    url: https://anchore.ci.ciscolabs.com:443/v1/query/vulnerabilities?id=VULNDB-133666
+    severity: High
+    xxx_nounkeyedliteral: {}
+    xxx_unrecognized: []
+    xxx_sizecache: 0
+  - identifier: VULNDB-202249
+    packagename: Jinja2
+    packageversion: "2.10"
+    fix: 2.10.1
+    url: https://anchore.ci.ciscolabs.com:443/v1/query/vulnerabilities?id=VULNDB-202249
+    severity: Critical
+    xxx_nounkeyedliteral: {}
+    xxx_unrecognized: []
+    xxx_sizecache: 0
+  - identifier: VULNDB-198914
+    packagename: Jinja2
+    packageversion: "2.10"
+    fix: None
+    url: https://anchore.ci.ciscolabs.com:443/v1/query/vulnerabilities?id=VULNDB-198914
+    severity: High
+    xxx_nounkeyedliteral: {}
+    xxx_unrecognized: []
+    xxx_sizecache: 0
+  - identifier: VULNDB-219847
+    packagename: tensorflow
+    packageversion: 1.8.0
+    fix: 2.0, 1.15.0
+    url: https://anchore.ci.ciscolabs.com:443/v1/query/vulnerabilities?id=VULNDB-219847
+    severity: High
+    xxx_nounkeyedliteral: {}
+    xxx_unrecognized: []
+    xxx_sizecache: 0
+  - identifier: VULNDB-219159
+    packagename: tornado
+    packageversion: 5.0.2
+    fix: 5.1.0b1
+    url: https://anchore.ci.ciscolabs.com:443/v1/query/vulnerabilities?id=VULNDB-219159
+    severity: High
+    xxx_nounkeyedliteral: {}
+    xxx_unrecognized: []
+    xxx_sizecache: 0
+  xxx_nounkeyedliteral: {}
+  xxx_unrecognized: []
+  xxx_sizecache: 0
+xxx_nounkeyedliteral: {}
+xxx_unrecognized: []
+xxx_sizecache: 0

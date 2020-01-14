@@ -1,0 +1,36 @@
+syntax = "proto3";
+package scanr;
+
+message Vulnerability {
+    string identifier = 1;
+    string package_name = 2;
+    string package_version = 3;
+    string fix = 4;
+    string url = 5;
+    string severity = 6;
+}
+
+message ImageVulnerabilityReport {
+    string image = 1;
+    int32 badvulns = 2;
+    repeated Vulnerability vulns = 3;
+}
+
+message NamespaceVulnerabilityReport {
+    string namespace = 1;
+    int32 badvulns = 2;
+    repeated ImageVulnerabilityReport image_vuln_report = 3;
+}
+
+message KFVulnerabilityReport {
+    string kfdef = 1;
+    string platform = 2;
+    int32 badvulns = 3;
+    repeated NamespaceVulnerabilityReport vuln_report = 4;
+}
+
+message ClusterVulnerabilityReport {
+    string cluster_context = 1;
+    int32 badvulns = 2;
+    repeated NamespaceVulnerabilityReport vuln_report = 3;
+}

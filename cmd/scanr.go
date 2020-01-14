@@ -5,8 +5,6 @@ import (
 
 	"github.com/CiscoAI/kubeflow-scanner/cmd/scanr/image"
 	"github.com/CiscoAI/kubeflow-scanner/cmd/scanr/k8s"
-	"github.com/CiscoAI/kubeflow-scanner/cmd/scanr/kf"
-	"github.com/CiscoAI/kubeflow-scanner/cmd/scanr/server"
 	"github.com/CiscoAI/kubeflow-scanner/cmd/scanr/version"
 	log "github.com/sirupsen/logrus"
 	"github.com/spf13/cobra"
@@ -28,8 +26,8 @@ func NewCommand() *cobra.Command {
 	cmd := &cobra.Command{
 		Args:  cobra.NoArgs,
 		Use:   "scanr",
-		Short: "scanr is a tool for scanning Kubeflow artifacts",
-		Long:  `scanr is a CLI tool for scanning Kubeflow images for vulnerabilities.`,
+		Short: "scanr is a tool for vulnerability scanning Cloud Native artifacts",
+		Long:  `scanr is a CLI tool for vulnerability scanning Cloud Native artifacts.`,
 		PersistentPreRunE: func(cmd *cobra.Command, args []string) error {
 			return runE(flags, cmd, args)
 		},
@@ -42,9 +40,9 @@ func NewCommand() *cobra.Command {
 	cmd.PersistentFlags().StringVar(&flags.Scanner, "scanner", "anchore", "Choice of vulnerability scanner.")
 	// sub-commands
 	cmd.AddCommand(k8s.NewCommand())
-	cmd.AddCommand(kf.NewCommand())
+	//cmd.AddCommand(kf.NewCommand())
 	cmd.AddCommand(image.NewCommand())
-	cmd.AddCommand(server.NewCommand())
+	//cmd.AddCommand(server.NewCommand())
 	cmd.AddCommand(version.NewCommand())
 	return cmd
 }
@@ -59,12 +57,6 @@ func runE(flags *Flags, cmd *cobra.Command, args []string) error {
 		level = parsed
 	}
 	log.SetLevel(level)
-
-	// handle registry logic
-	// isGCR := false
-	// log.Infof("is Repo GCR: %v", isGCR)
-
-	// handle scanner logic
 	return nil
 }
 
