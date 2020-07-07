@@ -20,7 +20,7 @@ var lock sync.Mutex
 
 func ImageScanWorkflow(image string) (*pbv1alpha1.ImageVulnerabilityReport, error) {
 	ctx := context.Background()
-	ctx, cancel := context.WithTimeout(ctx, 3*time.Minute)
+	ctx, cancel := context.WithTimeout(ctx, 30*time.Minute)
 	defer cancel()
 
 	err := anchore.ScanImage(ctx, image)
